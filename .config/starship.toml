@@ -1,0 +1,177 @@
+format = """
+$battery\
+$sudo\
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$git_metrics\
+$fill\
+$nodejs\
+$docker_context\
+$python\
+$php\
+$os\
+$container\
+$cmd_duration $jobs $time\
+$line_break\
+$character"""
+
+add_newline = false
+
+[battery]
+full_symbol = '🔋 '
+charging_symbol = '⚡️ '
+discharging_symbol = '󰂑 '
+format = '[$symbol$percentage]($style) '
+
+[[battery.display]]
+threshold = 90
+style = 'bold yellow'
+discharging_symbol = '󰂂 '
+
+[[battery.display]]
+threshold = 50
+style = 'bold yellow'
+discharging_symbol = '󰁿 '
+charging_symbol = '󰢝 '
+
+
+[[battery.display]] # 'bold yellow' style and 💦 symbol when capacity is between 10% and 30%
+threshold = 30
+style = 'bold yellow'
+discharging_symbol = '💦 '
+
+[[battery.display]]
+threshold = 10
+style = 'bold red'
+discharging_symbol  = '󱟥 '
+
+[[battery.display]] # 'bold yellow' style and 💦 symbol when capacity is between 10% and 30%
+threshold = 100
+style = 'bold green'
+
+[nodejs]
+format = "[$symbol($version )]($style)"
+
+# ~/.config/starship.toml
+
+[python]
+symbol = ' '
+pyenv_version_name = true
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+
+[sudo]
+style = 'bold green'
+# symbol = '👩‍💻 '
+symbol = ' '
+disabled = false
+format = '[$symbol]($style)'
+
+[php]
+format = '[$symbol $version](147 bold) '
+
+[docker_context]
+format = '[$symbol $context](blue bold)'
+
+
+[fill]
+symbol = " "
+
+[directory]
+style = "blue "
+read_only = " "
+truncation_length = 4
+truncate_to_repo = false
+
+[character]
+success_symbol = "Let's goo [❯](green)"
+error_symbol = "Oh shit! [❯](red)"
+vicmd_symbol = "[❮](yellow)"
+
+[container]
+format = '[$symbol \[$name\]]($style) '
+
+[git_branch]
+symbol = " "
+# symbol = " "
+format = "[$symbol$branch]($style) "
+style = "bright-black"
+
+[jobs]
+symbol = " "
+style = "bold yellow"
+number_threshold = 1
+format = "[$symbol]($style)"
+
+[os]
+format = "[$symbol]($style)"
+style = "bold blue"
+disabled = false
+
+[os.symbols]
+Windows = " "
+Manjaro = " "
+
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "cyan"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
+
+[git_metrics]
+disabled = false
+
+[cmd_duration]
+format = "[$duration]($style)"
+style = "yellow"
+
+[memory_usage]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[time]
+disabled = false
+style = "bold white"
+format = " [$time]($style)"
+
+[custom.stunnel]
+when = "ps aux | grep stunnel | grep -v grep"
+command = "ps -o etime= -p $(ps aux | grep stunnel | grep -v grep | awk '{print $2}')"
+style = "red"
+format = "[TUNNEL OPEN for $output]($style)"
+
+[palettes.catppuccin_macchiato]
+rosewater = "#f4dbd6"
+flamingo = "#f0c6c6"
+pink = "#f5bde6"
+mauve = "#c6a0f6"
+red = "#ed8796"
+maroon = "#ee99a0"
+peach = "#f5a97f"
+yellow = "#eed49f"
+green = "#a6da95"
+teal = "#8bd5ca"
+sky = "#91d7e3"
+sapphire = "#7dc4e4"
+blue = "#8aadf4"
+lavender = "#b7bdf8"
+text = "#cad3f5"
+subtext1 = "#b8c0e0"
+subtext0 = "#a5adcb"
+overlay2 = "#939ab7"
+overlay1 = "#8087a2"
+overlay0 = "#6e738d"
+surface2 = "#5b6078"
+surface1 = "#494d64"
+surface0 = "#363a4f"
+base = "#24273a"
+mantle = "#1e2030"
+crust = "#181926"
