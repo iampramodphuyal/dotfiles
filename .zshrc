@@ -89,6 +89,7 @@ zsh-syntax-highlighting
 
 source $ZSH/oh-my-zsh.sh
 source ~/.grepsr/alias
+source ~/dotfiles/alias/alias
 source <(fzf --zsh)
 
 HISTFILE=~/.zsh_history

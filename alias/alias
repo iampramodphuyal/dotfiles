@@ -1,3 +1,5 @@
 alias urlencode='node -e "console.log(encodeURIComponent(process.argv[1]))"'
 alias urldecode='node -e "console.log(decodeURIComponent(process.argv[1]))"'
 alias pnvim='pipenv shell nvim .'
+alias base64encode='python ~/dotfiles/alias/base64/base64_ops.py encode'
+alias base64decode='python ~/dotfiles/alias/base64/base64_ops.py decode'
