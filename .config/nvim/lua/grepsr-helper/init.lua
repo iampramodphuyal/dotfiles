@@ -71,10 +71,58 @@ function create_project_url()
     end
 end
 
+function gcli_deploy(msg)
+    local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+    local class_name = nil
+    for _, line in ipairs(lines) do
+        if not class_name then
+            class_name = string.match(line, "class%s+([%w_]+)")
+        end
+        if class_name then
+            break
+        end
+    end
+    vim.cmd "vsplit | terminal"
+    local command = "gcli crawler deploy -s " .. class_name .. " -m '" .. msg .. "'"
+    vim.fn.chansend(vim.b.terminal_job_id, command .. "\n")
+end
+
 vim.api.nvim_create_user_command("PID", function()
     create_project_url()
 end, {})
 
 vim.api.nvim_create_user_command("GcliTest", function()
     gcli_test()
+end, {})
+
+vim.api.nvim_create_user_command("GcliDeploy", function()
+    local msg = vim.fn.input "Deploy Message: "
+    if msg == "" then
+        print "Error: no message provided"
+    else
+        gcli_deploy(msg)
+    end
+end, {})
+
+--This will generate php syntax for setHeaders from curl in clipboard
+local function get_headers()
+    local clipboard = vim.fn.getreg "+"
+
+    if clipboard:match "^curl" then
+        local headers = {}
+        for header in clipboard:gmatch "-H '([^']+)'" do
+            local key, value = header:match "([^:]+):%s*(.*)"
+            if key and value then
+                table.insert(headers, string.format("$this->setHeaders('%s', '%s');", key, value))
+            end
+        end
+        -- local result = table.concat(headers, "\n")
+        vim.api.nvim_put(headers, "l", true, true)
+    else
+        print "No Valid Curl Found In Clipboard"
+    end
+end
+
+vim.api.nvim_create_user_command("GetHeaders", function()
+    get_headers()
 end, {})
