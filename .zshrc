@@ -124,7 +124,7 @@ setopt appendhistory
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # this line has been added by maestro.
-PATH=$PATH:"$HOME/.pyenv/bin"
+PATH=$PATH:"$HOME/.pyenv/bin":"$HOME/dotfiles/customs"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
