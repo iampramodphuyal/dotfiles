@@ -6,7 +6,19 @@ end
 
 -- Create a command to start the server
 vim.api.nvim_create_user_command("StartServer", StartServer, {})
-
+function toogleFloatTerm()
+    require("nvchad.term").toggle {
+        pos = "float",
+        id = "floatTerm",
+        float_opts = {
+            row = 0.001,
+            col = 0.001,
+            width = 0.98,
+            height = 0.90,
+            border = "single",
+        },
+    }
+end
 --Function to run gcli test
 function gcli_test()
     local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)

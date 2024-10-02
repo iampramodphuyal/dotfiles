@@ -1,8 +1,11 @@
 #!/bin/bash
 
-if pgrep wofi
+if pgrep wofi > /dev/null
 then
   pkill wofi
+  wofi --show drun &
+  wait $!
 else
-  wofi --show drun
+  wofi --show drun &
+  wait $!
 fi
