@@ -7,10 +7,10 @@
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-
+# export PATH=$HOME/.config/rofi/scripts:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-
+export PATH=$HOME/.config/rofi/scripts:$PATH
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -89,7 +89,6 @@ zsh-syntax-highlighting
 
 source $ZSH/oh-my-zsh.sh
 source ~/.grepsr/alias
-source ~/dotfiles/alias/alias
 source <(fzf --zsh)
 
 HISTFILE=~/.zsh_history
