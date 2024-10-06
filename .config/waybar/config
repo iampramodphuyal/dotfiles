@@ -1,13 +1,13 @@
 {
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
-    "mod": "dock",
+    //"mod": "dock",
     "reload_style_on_change":true,
     "width": "auto", //1280, // Waybar width
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock"],
-    "modules-right": ["network","bluetooth","pulseaudio", "backlight", "battery","tray", "custom/lock", "custom/power"],
+    "modules-right": ["network","bluetooth","pulseaudio", "backlight", "battery","tray","custom/notification", "custom/power" ],
     "hyprland/workspaces": {
          "disable-scroll": true,
          "sort-by-name": true,
@@ -22,7 +22,7 @@
     },
     "tray": {
         "icon-size": "auto",
-        "spacing": 10
+        "spacing": 5
     },
     "custom/music": {
         "format": "  {}",
@@ -105,5 +105,11 @@
         "tooltip": false,
         "on-click": "wlogout &",
         "format": "襤"
+    },
+
+    //notification
+    "custom/notification": {
+      "format":"",
+      "on-click": "swaync-client -t -sw",
     }
 }

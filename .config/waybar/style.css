@@ -49,11 +49,11 @@ tooltip label {
 #clock,
 #battery,
 #pulseaudio,
-#custom-lock,
+#custom-notification,
 #custom-power {
   background-color: @surface0;
-  padding: 0.01rem 1rem;
-  margin: 5px 0;
+  padding: 0.01rem 0.9rem;
+  margin: 3px 0;
 }
 
 #clock {
@@ -112,7 +112,7 @@ tooltip label {
   border-radius: 1rem;
 }
 
-#custom-lock {
+#custom-notification {
   border-radius: 1rem 0px 0px 1rem;
   color: @lavender;
 }
