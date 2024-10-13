@@ -4,7 +4,7 @@
 # Option to scan for available Wi-Fi networks and connect
 connect_to_wifi() {
   hyprctl notify -1 4000 "rgb(ff1ea3)" "fontsize:11 Getting list of available Wi-Fi networks..."
-  wifi_list=$(nmcli --fields "IN-USE,SECURITY,SSID" device wifi list | sed 1d | sed 's/  */ /g' | sed -E "s/WPA*.?\S|WEP*.?\s/ /g" | sed "s/^--/ /g" | sed "s/  //g" | sed "/--/d"|sed "s/* /Connected: /g" | sort -k 1,1r)
+  wifi_list=$(nmcli --fields "IN-USE,SECURITY,SSID" device wifi list | sed 1d | sed 's/  */ /g' | sed -E "s/WPA*.?\S|WEP*.?\s/ /g" | sed "s/^--/ /g" | sed "s/  //g" | sed "s/* /Connected: /g" | sort -k 1,1r)
 
   connected=$(nmcli -fields WIFI g)
 if [[ "$connected" =~ "enabled" ]]; then

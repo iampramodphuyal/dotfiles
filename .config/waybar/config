@@ -63,13 +63,21 @@
         // "scroll-step": 1, // %, can be a float
         "format": "{icon} {volume}%",
         "format-muted": "",
+"format-source-muted": "",
         "format-icons": {
-            "default": ["", "", " "]
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
     },
 "network": {
         "tooltip": true,
+        "format":"\uf6ff",
         "format-wifi": " ",
         "rotate": 0,
         "format-ethernet": "󰈀 ",
@@ -108,8 +116,32 @@
     },
 
     //notification
-    "custom/notification": {
-      "format":"",
-      "on-click": "swaync-client -t -sw",
-    }
+    //"custom/notification": {
+     // "format":"",
+     // "on-click": "swaync-client -t -sw",
+   // },
+"custom/notification": {
+    //"tooltip": true,
+    //"format": "{icon}",
+     "format":"",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": ""
+    },
+    //"tooltip-format":"{swaync-client -c} Notifications",
+    //"return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    //"exec":"~/dotfiles/.config/waybar/scripts/notification.sh",
+    //"interval":3,
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  }
 }

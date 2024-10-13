@@ -21,7 +21,7 @@ if [ "$chosen_network" = "" ]; then
 elif [ "$chosen_network" = "󰖩  Enable Wi-Fi" ]; then
 	nmcli radio wifi on
 elif [ "$chosen_network" = "󰖪  Disable Wi-Fi" ]; then
-	nmcli radio wifi off
+	nmcli radio wifi off && hyprctl notify -1 4000  "rgb(ff1ea3)" "Connection Disabled"
 else
 	# Message to show when connection is activated successfully
   	success_message="You are now connected to the Wi-Fi network \"$chosen_id\"."
@@ -36,3 +36,8 @@ else
 		nmcli device wifi connect "$chosen_id" password "$wifi_password" | grep "successfully" && hyprctl notify -1 4000 "rgb(ff1ea3)" "Connection Established" "$success_message"
     fi
 fi
+
+  connected_ssid=$(nmcli -t -f active,ssid dev wifi | grep '^yes' | cut -d':' -f2)
+  if [ -n "$connected_ssid" ]; then
+      hyprctl_notify -1 4000 "Connection Established: $connected_ssid"
+  fi

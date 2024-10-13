@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Service
+MimeType=image/png;image/jpeg;
+Actions=setAsWallpaper
+
+[Desktop Action setAsWallpaper]
+Name=Set As Hyprland Wallpaper
+Exec=hyprctl hyprpaper preload %u | hyprctl hyprpaper wallpaper ", %u"
