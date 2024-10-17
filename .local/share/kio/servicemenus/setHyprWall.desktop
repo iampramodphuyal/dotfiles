@@ -5,4 +5,4 @@ Actions=setAsWallpaper
 
 [Desktop Action setAsWallpaper]
 Name=Set As Hyprland Wallpaper
-Exec=hyprctl hyprpaper preload %u | hyprctl hyprpaper wallpaper ", %u"
+Exec= ~/dotfiles/customs/wallpaper/hyprwall.sh %u

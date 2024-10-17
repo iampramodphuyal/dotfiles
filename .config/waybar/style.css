@@ -52,7 +52,7 @@ tooltip label {
 #custom-notification,
 #custom-power {
   background-color: @surface0;
-  padding: 0.01rem 0.9rem;
+  padding: 0.01rem 0.85rem;
   margin: 3px 0;
 }
 

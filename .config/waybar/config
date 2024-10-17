@@ -1,10 +1,8 @@
 {
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
-    //"mod": "dock",
     "reload_style_on_change":true,
-    "width": "auto", //1280, // Waybar width
-    // Choose the order of the modules
+    "width": "auto", 
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock"],
     "modules-right": ["network","bluetooth","pulseaudio", "backlight", "battery","tray","custom/notification", "custom/power" ],
@@ -13,8 +11,8 @@
          "sort-by-name": true,
          "format": " {icon} ",
          "format-icons": {
-             "default": "",
-         },
+             "default": ""
+         }
      },
      "hyprland/window": {
           "separate-outputs": true,
@@ -55,19 +53,18 @@
         },
         "format": "{icon}",
         "format-charging": " {capacity}%",
-        "format-plugged": "",
+        "format-plugged": " {capacity}%",
         "format-alt": "{icon} {capacity}%",
         "format-icons": ["", "",  "", "", "", "", "", "", "", "", "", ""]
     },
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
         "format": "{icon} {volume}%",
         "format-muted": "",
 "format-source-muted": "",
         "format-icons": {
             "headphone": "",
+            "headset": "",
             "hands-free": "",
-            "headset": "",
             "phone": "",
             "portable": "",
             "car": "",
@@ -91,35 +88,28 @@
     },
 
 "bluetooth": {
-"format": " {status}",
+  "format": " {status}",
 	"format-connected": " {device_alias}",
 	"format-connected-battery": " {device_alias} {device_battery_percentage}%",
-	"format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+	"format-device-preference": [ "device1", "device2" ],
 	"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
 	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
 	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
 	"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
   "menu" : "devices",
- "on-click": "blueman-manager",
-  },
-
+  "on-click": "blueman-manager"
+},
 
     "custom/lock": {
         "tooltip": false,
         "on-click": "sh -c '(sleep 0.5s; swaylock --grace 0)' & disown",
-        "format": "",
+        "format": ""
     },
     "custom/power": {
         "tooltip": false,
         "on-click": "wlogout &",
         "format": "襤"
     },
-
-    //notification
-    //"custom/notification": {
-     // "format":"",
-     // "on-click": "swaync-client -t -sw",
-   // },
 "custom/notification": {
     //"tooltip": true,
     //"format": "{icon}",
