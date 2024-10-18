@@ -28,6 +28,27 @@ yay kitty
 ```
 yay nvim
 ```
+### Rofi - for dmenu
+```
+yay rofi
+```
+### Status Bar - Waybar
+```
+yay waybar
+```
+### Lockscreen - Hyprlock
+```
+yay hyprlock
+```
+### Wallpaper Engine - Hyprpaper
+```
+yay Hyprpaper
+```
+### Notification Daemon - Swaync
+```
+yay swaync
+```
+
 
 ## Installation
 First, clone dotfiles in home dir :> ~/ 
@@ -40,3 +61,4 @@ then GNU Stow to create symlinks
 ```
 $ stow .
 ```
+
