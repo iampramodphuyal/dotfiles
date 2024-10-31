@@ -12,7 +12,7 @@
 
 * {
   font-family: JetBrainsMono NFM SemiBold;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .control-center .notification-row:focus,
@@ -50,8 +50,8 @@
   color: @cc-bg;
   text-shadow: none;
   padding: 0px;
-  border-radius: 0px;
-  margin-top: 5px;
+  border-radius: 8px;
+  margin-top: 10px;
   margin-right: 5px;
 }
 
@@ -60,6 +60,7 @@
   background: #f7768e;
   transition: all 0.15s ease-in-out;
   border: none;
+  border-radius: 3px;
 }
 
 .notification-action {
@@ -179,9 +180,9 @@
 .widget-title {
   color: #7aa2f7;
   background: @noti-bg-darker;
-  padding: 5px 10px;
-  margin: 10px 10px 5px 10px;
-  font-size: 1.5rem;
+  padding: 3px 7px;
+  margin: 5px 5px 5px 5px;
+  font-size: 3rem;
   border-radius: 8px;
 }
 
@@ -200,7 +201,8 @@
 }
 
 .widget-dnd {
-  background: @noti-bg-darker;
+  /*background: @noti-bg-darker;*/
+  background: transparent;
   padding: 5px 10px;
   margin: 5px 10px;
   border-radius: 8px;
@@ -209,7 +211,7 @@
 }
 
 .widget-dnd > switch {
-  border-radius: 5px;
+  border-radius: 15px;
   background: #7aa2f7;
 }
 
@@ -235,9 +237,9 @@
 
 .widget-mpris {
   color: @text-color;
-  background: @noti-bg-darker;
-  padding: 5px 10px;
-  margin: 5px 10px 5px 10px;
+  background: transparent;
+  padding: 0px 5px;
+  /*margin: 5px 10px 5px 10px;*/
   border-radius: 8px;
 }
 
@@ -285,13 +287,13 @@
 }
 
 .widget-menubar > box > .menu-button-bar > button {
-  border: none;
-  background: transparent;
+  /*border: none;*/
+  /*background: transparent;*/
 }
 
 .topbar-buttons > button {
-  border: none;
-  background: transparent;
+  /*border: none;*/
+  /*background: transparent;*/
 }
 
 .widget-volume {
@@ -299,7 +301,7 @@
   padding: 10px;
   margin: 3px 10px;
   border-radius: 8px;
-  font-size: 2rem;
+  font-size: 3rem;
   color: #7aa2f7;
 }
 
