@@ -4,6 +4,22 @@ local options = {
         css = { "prettier" },
         html = { "prettier" },
         json = { "prettier" },
+        javascript = { "prettier" },
+        typescript = { "prettier" },
+    },
+    formatters = {
+        prettier = {
+            command = "prettier",
+            arg = function()
+                return {
+                    "--stdin-filepath",
+                    vim.api.nvim_buf_get_name(0),
+                    "--tab-width",
+                    "4",
+                }
+            end,
+            stdin = true,
+        },
     },
 
     format_on_save = {

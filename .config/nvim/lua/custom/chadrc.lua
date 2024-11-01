@@ -12,7 +12,7 @@ M.options = {
 }
 
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "py", "php", "js", "lua" },
+    pattern = { "py", "php", "js", "lua", "ts", "json" },
     callback = function()
         vim.opt.tabstop = M.options.tabstop
         vim.opt.shiftwidth = M.options.shiftwidth
