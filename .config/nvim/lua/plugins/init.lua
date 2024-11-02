@@ -28,7 +28,7 @@ return {
     },
     {
         "L3MON4D3/LuaSnip",
-        enabled = true,
+        enabled = false,
         -- follow latest release.
         version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
         -- install jsregexp (optional!).
@@ -46,6 +46,7 @@ return {
             }
         end,
         enabled = false,
+        lazy = true,
     },
     --
     -- {
@@ -60,13 +61,18 @@ return {
     --     },
     -- },
     --
-    -- {
-    -- 	"nvim-treesitter/nvim-treesitter",
-    -- 	opts = {
-    -- 		ensure_installed = {
-    -- 			"vim", "lua", "vimdoc",
-    --      "html", "css"
-    -- 		},
-    -- 	},
-    -- },
+    {
+        "nvim-treesitter/nvim-treesitter",
+        opts = {
+            ensure_installed = {
+                "vim",
+                "lua",
+                "vimdoc",
+                "javascript",
+                "php",
+                -- "html",
+                -- "css",
+            },
+        },
+    },
 }
