@@ -11,6 +11,11 @@ M.options = {
     clipboard = "unnamedplus",
 }
 
+M.plugins = {
+    status = {
+        dashboard = true,
+    },
+}
 vim.api.nvim_create_autocmd("FileType", {
     pattern = { "py", "php", "js", "lua", "ts", "json" },
     callback = function()
