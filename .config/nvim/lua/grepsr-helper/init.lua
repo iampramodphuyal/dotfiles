@@ -21,20 +21,23 @@ function toogleFloatTerm()
 end
 --Function to run gcli test
 function gcli_test()
-    local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
-    local class_name = nil
-    for _, line in ipairs(lines) do
-        if not class_name then
-            class_name = string.match(line, "class%s+([%w_]+)")
-        end
-        if class_name then
-            break
-        end
-    end
-    --open terminal in side-to-side mode
-    vim.cmd "vsplit | terminal"
-    local command = "gcli crawler test -s " .. class_name
-    vim.fn.chansend(vim.b.terminal_job_id, command .. "\n")
+    local path = vim.fn.substitute(vim.fn.expand "%", "vortex_\\w\\+/", "", "")
+    -- print("filepath:: " .. path)
+    local fileName = vim.split(path, "/")[2]
+    local command = "gcli crawler test -s " .. fileName
+    require("nvchad.term").toggle {
+        pos = "float",
+        cmd = command,
+        id = "floatTerm",
+        clear_cmd = true,
+        float_opts = {
+            row = 0.001,
+            col = 0.001,
+            width = 0.98,
+            height = 0.90,
+            border = "single",
+        },
+    }
 end
 
 -- Function to extract PID and create URL
@@ -84,19 +87,22 @@ function create_project_url()
 end
 
 function gcli_deploy(msg)
-    local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
-    local class_name = nil
-    for _, line in ipairs(lines) do
-        if not class_name then
-            class_name = string.match(line, "class%s+([%w_]+)")
-        end
-        if class_name then
-            break
-        end
-    end
-    vim.cmd "vsplit | terminal"
-    local command = "gcli crawler deploy -s " .. class_name .. " -m '" .. msg .. "'"
-    vim.fn.chansend(vim.b.terminal_job_id, command .. "\n")
+    local path = vim.fn.substitute(vim.fn.expand "%", "vortex_\\w\\+/", "", "")
+    local fileName = vim.split(path, "/")[2]
+    local command = "gcli crawler deploy -s " .. fileName .. " -m '" .. msg .. "'"
+    require("nvchad.term").toggle {
+        pos = "float",
+        cmd = command,
+        id = "floatTerm",
+        clear_cmd = true,
+        float_opts = {
+            row = 0.001,
+            col = 0.001,
+            width = 0.98,
+            height = 0.90,
+            border = "single",
+        },
+    }
 end
 
 vim.api.nvim_create_user_command("PID", function()
