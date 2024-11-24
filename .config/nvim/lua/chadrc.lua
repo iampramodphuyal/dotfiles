@@ -21,34 +21,6 @@ M.ui = {
         Comment = { italic = true },
         ["@comment"] = { italic = true },
     },
-    nvdash = {
-        load_on_startup = true,
-
-        -- header = {
-        --   "                            ",
-        --   "     ▄▄         ▄ ▄▄▄▄▄▄▄   ",
-        --   "   ▄▀███▄     ▄██ █████▀    ",
-        --   "   ██▄▀███▄   ███           ",
-        --   "   ███  ▀███▄ ███           ",
-        --   "   ███    ▀██ ███           ",
-        --   "   ███      ▀ ███           ",
-        --   "   ▀██ █████▄▀█▀▄██████▄    ",
-        --   "     ▀ ▀▀▀▀▀▀▀ ▀▀▀▀▀▀▀▀▀▀   ",
-        --   "                            ",
-        --   "     Powered By  eovim    ",
-        --   "                            ",
-        -- },
-        --
-        -- buttons = {
-        --   { txt = "  Find File", keys = "Spc f f", cmd = "Telescope find_files" },
-        --   { txt = "  Recent Files", keys = "Spc f o", cmd = "Telescope oldfiles" },
-        --   -- more... check nvconfig.lua file for full list of buttons
-    },
 }
 
-M.plugins = {
-    status = {
-        dashboard = true,
-    },
-}
 return M

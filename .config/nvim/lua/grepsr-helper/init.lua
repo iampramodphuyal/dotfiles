@@ -22,22 +22,26 @@ end
 --Function to run gcli test
 function gcli_test()
     local path = vim.fn.substitute(vim.fn.expand "%", "vortex_\\w\\+/", "", "")
-    -- print("filepath:: " .. path)
-    local fileName = vim.split(path, "/")[2]
-    local command = "gcli crawler test -s " .. fileName
-    require("nvchad.term").toggle {
-        pos = "float",
-        cmd = command,
-        id = "floatTerm",
-        clear_cmd = true,
-        float_opts = {
-            row = 0.001,
-            col = 0.001,
-            width = 0.98,
-            height = 0.90,
-            border = "single",
-        },
-    }
+    if path ~= nil or path ~= "" then
+        print("filepath:: " .. path)
+        local fileName = vim.split(path, "/")[2]
+        local command = "gcli crawler test -s " .. fileName
+        require("nvchad.term").toggle {
+            pos = "float",
+            cmd = command,
+            id = "floatTerm",
+            clear_cmd = true,
+            float_opts = {
+                row = 0.001,
+                col = 0.001,
+                width = 0.98,
+                height = 0.90,
+                border = "single",
+            },
+        }
+    else
+        print "Error Getting filepath"
+    end
 end
 
 -- Function to extract PID and create URL

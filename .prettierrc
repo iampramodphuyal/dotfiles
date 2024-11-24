@@ -1,6 +1,6 @@
 {
     "tabWidth": 4,
     "singleQuote": false,
-    "trailingComma": "es6",
+    "trailingComma": "all",
     "overrides": []
 }
