@@ -6,25 +6,18 @@ return {
             require "configs.conform"
         end,
     },
-    -- {
-
-    -- }
-    -- These are some examples, uncomment them if you want to see them work!
+    {
+        "mistricky/codesnap.nvim",
+        build = "make",
+        event = "VeryLazy"
+    },
     {
         "neovim/nvim-lspconfig",
         config = function()
             require("nvchad.configs.lspconfig").defaults()
             require "configs.lspconfig"
         end,
-    },
-    {
-        "voldikss/vim-floaterm",
-        lazy = false,
-        enabled = false,
-    },
-    {
-        "APZelos/blamer.nvim",
-        enabled = false,
+        event = "VeryLazy"
     },
     {
         "L3MON4D3/LuaSnip",
@@ -48,19 +41,19 @@ return {
         enabled = false,
         lazy = true,
     },
-    --
-    -- {
-    --     "williamboman/mason.nvim",
-    --     opts = {
-    --         ensure_installed = {
-    --             "lua-language-server",
-    --             "stylua",
-    --             -- "tsserver",
-    --             -- "html-lsp", "css-lsp" , "prettier"
-    --         },
-    --     },
-    -- },
-    --
+
+    {
+        "williamboman/mason.nvim",
+        opts = {
+            ensure_installed = {
+                "lua-language-server",
+                "stylua",
+                "tsserver",
+                "prettier"
+            },
+        },
+        event = 'VeryLazy'
+    },
     {
         "nvim-treesitter/nvim-treesitter",
         opts = {
@@ -74,5 +67,6 @@ return {
                 -- "css",
             },
         },
+        event = 'VeryLazy'
     },
 }

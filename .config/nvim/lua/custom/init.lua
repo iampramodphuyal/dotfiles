@@ -19,3 +19,8 @@ end, {})
 vim.api.nvim_create_user_command("ShowParentFolder", function()
     print(vim.fn.expand "%:p:h")
 end, {})
+
+require("codesnap").setup({
+    save_path = '~/Pictures/codesnap/',
+    watermark = ""
+})
