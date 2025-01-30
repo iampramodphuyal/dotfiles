@@ -39,7 +39,7 @@ require "custom.mappings"
 require "custom.init"
 
 require "mycodetime"
-vim.opt.runtimepath:append(vim.fn.expand("~/Documents/projects/Winger.nvim/"))
+vim.opt.runtimepath:append(vim.fn.expand("~/Documents/projects/Winger.nvim"))
 require("Winger").setup({
     basePath = '~/Documents/grepsr/'
 })
