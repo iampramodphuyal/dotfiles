@@ -4,7 +4,7 @@ local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "html", "cssls", "intelephense", "pyright", "ts_ls" }
+local servers = { "pyright", "ts_ls" }
 -- lsps with default config
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
@@ -13,6 +13,21 @@ for _, lsp in ipairs(servers) do
         capabilities = capabilities,
     }
 end
+
+-- For php intelephense
+lspconfig.intelephense.setup {
+    filetypes = { "php" },
+    on_attach = on_attach,
+    on_init = on_init,
+    capabilities = capabilities,
+}
+
+lspconfig.clangd.setup {
+    filetypes = { "cpp", 'h' },
+    on_attach = on_attach,
+    on_init = on_init,
+    capabilities = capabilities,
+}
 -- typescript
 -- lspconfig.ts_ls.setup {
 --     on_attach = on_attach,

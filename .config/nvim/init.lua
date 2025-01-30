@@ -32,13 +32,17 @@ dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
 
 require "nvchad.autocmds"
+require "options"
 --custom configs
 require "custom.chadrc"
 require "custom.mappings"
 require "custom.init"
 
-require "grepsr-helper.init"
-require "grepsr-helper.mappings"
+require "mycodetime"
+vim.opt.runtimepath:append(vim.fn.expand("~/Documents/projects/Winger.nvim/"))
+require("Winger").setup({
+    basePath = '~/Documents/grepsr/'
+})
 vim.schedule(function()
     require "mappings"
 end)

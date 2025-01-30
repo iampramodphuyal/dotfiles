@@ -11,6 +11,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 export PATH=$HOME/.config/rofi/scripts:$PATH
+export PATH=$PATH:/usr/local/go/bin
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -131,6 +132,12 @@ PATH=$PATH:"$HOME/.pyenv/bin"
 function set_win_title(){
     echo -ne "\033]0; $(basename "$PWD") \007"
 }
+
+#custom keybindings
+if [ -f ~/.custom_keybindings ]; then
+    source ~/.custom_keybindings
+fi
+
 # starship_precmd_user_func="set_win_title"
 # precmd_functions+=(set_win_title)
 eval "$(starship init zsh)"

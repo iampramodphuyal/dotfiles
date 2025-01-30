@@ -1,0 +1,3 @@
+#CUSOM ZSH-KEYBINDINGS
+
+bindkey -s '\C-f' 'ff\n' #fzf powered search file and open with nvim
