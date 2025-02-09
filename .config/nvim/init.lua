@@ -38,11 +38,6 @@ require "custom.chadrc"
 require "custom.mappings"
 require "custom.init"
 
-require "mycodetime"
-vim.opt.runtimepath:append(vim.fn.expand("~/Documents/projects/Winger.nvim"))
-require("Winger").setup({
-    basePath = '~/Documents/grepsr/'
-})
 vim.schedule(function()
     require "mappings"
 end)

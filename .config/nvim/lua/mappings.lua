@@ -16,7 +16,8 @@ map({ "n", "t" }, "<A-i>", function()
             col = 0.001,
             width = 0.98,
             height = 0.90,
-            border = "single",
+            style = "minimal",
+            border = "rounded",
         },
     }
 end, { desc = "Floating term" })

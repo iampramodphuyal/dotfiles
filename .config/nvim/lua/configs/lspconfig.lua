@@ -14,7 +14,7 @@ for _, lsp in ipairs(servers) do
     }
 end
 
--- For php intelephense
+-- For php intelephense, php
 lspconfig.intelephense.setup {
     filetypes = { "php" },
     on_attach = on_attach,
@@ -22,12 +22,22 @@ lspconfig.intelephense.setup {
     capabilities = capabilities,
 }
 
+-- setup for c++
 lspconfig.clangd.setup {
     filetypes = { "cpp", 'h' },
     on_attach = on_attach,
     on_init = on_init,
     capabilities = capabilities,
 }
+
+--setup for golang
+lspconfig.gopls.setup {
+    filetypes = { 'go', 'gomod' },
+    on_attach = on_attach,
+    on_init = on_init,
+    capabilities = capabilities
+}
+
 -- typescript
 -- lspconfig.ts_ls.setup {
 --     on_attach = on_attach,

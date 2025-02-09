@@ -1,5 +1,24 @@
 return {
     {
+        dir = "~/Documents/projects/Winger.nvim",
+        name = 'Winger',
+        event = "VeryLazy",
+        config = function()
+            require("Winger").setup({
+                basePath = '~/Documents/grepsr/'
+            })
+        end
+    },
+    {
+        "iampramodphuyal/FTerminal.nvim",
+        event = "VeryLazy",
+        config = function()
+            require("FTerminal").setup({
+            })
+        end,
+        enabled = false
+    },
+    {
         "stevearc/conform.nvim",
         event = "BufWritePre", -- uncomment for format on save
         config = function()
