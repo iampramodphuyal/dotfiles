@@ -6,6 +6,8 @@ local options = {
         json = { "prettier" },
         javascript = { "prettier" },
         typescript = { "prettier" },
+        ts = { "prettier" },
+        go = { "gopls" },
     },
     formatters = {
         prettier = {

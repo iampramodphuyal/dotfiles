@@ -1,6 +1,7 @@
 {
   "FTerminal.nvim": { "branch": "main", "commit": "3f648e4b8df5e0f2b649a927b73a5f065165cfba" },
   "LuaSnip": { "branch": "master", "commit": "03c8e67eb7293c404845b3982db895d59c0d1538" },
+  "MyCodeTime.nvim": { "branch": "main", "commit": "d6aa67f8779a0b2d55026207400849a336811224" },
   "NvChad": { "branch": "v2.5", "commit": "6f25b2739684389ca69ea8229386c098c566c408" },
   "auto-session": { "branch": "main", "commit": "08c279882d4117a3e6ade1a014f7cf4af7c34fec" },
   "base46": { "branch": "v2.5", "commit": "fde7a2cd54599e148d376f82980407c2d24b0fa2" },

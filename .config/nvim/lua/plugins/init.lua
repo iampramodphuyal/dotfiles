@@ -19,6 +19,13 @@ return {
         enabled = false
     },
     {
+        "iampramodphuyal/MyCodeTime.nvim",
+        event = "VeryLazy",
+        config = function()
+            require "MyCodeTime"
+        end
+    },
+    {
         "stevearc/conform.nvim",
         event = "BufWritePre", -- uncomment for format on save
         config = function()
