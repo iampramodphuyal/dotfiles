@@ -4,7 +4,7 @@ local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "pyright", "ts_ls" }
+local servers = { "pyright" }
 -- lsps with default config
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
@@ -39,8 +39,10 @@ lspconfig.gopls.setup {
 }
 
 -- typescript
--- lspconfig.ts_ls.setup {
---     on_attach = on_attach,
---     on_init = on_init,
---     capabilities = capabilities,
--- }
+lspconfig.ts_ls.setup {
+    on_attach = on_attach,
+    on_init = on_init,
+    capabilities = capabilities,
+    filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+    cmd = { "typescript-language-server", "--stdio" }
+}
