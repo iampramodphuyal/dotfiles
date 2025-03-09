@@ -5,7 +5,7 @@
     "width": "auto", 
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock"],
-    "modules-right": ["bluetooth","pulseaudio", "backlight", "battery","tray","custom/notification", "custom/power" ], //add "network" if required
+    "modules-right": ["cpu","bluetooth","pulseaudio", "backlight", "battery", "tray", "custom/notification", "custom/power" ], //add "network" if required
     "hyprland/workspaces": {
          "disable-scroll": true,
          "sort-by-name": true,
@@ -21,6 +21,22 @@
     "tray": {
         "icon-size": "auto",
         "spacing": 5
+    },
+    "cpu": {
+        "interval": 0.5,
+        "format": "{usage}%",
+        "max-length": 16,
+        "format": "\uf4bc {usage}% {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}",
+        "format-icons": [
+            "<span color='#69ff94'>▁</span>", // green
+            "<span color='#2aa9ff'>▂</span>", // blue
+            "<span color='#f8f8f2'>▃</span>", // white
+            "<span color='#f8f8f2'>▄</span>", // white
+            "<span color='#ffffa5'>▅</span>", // yellow
+            "<span color='#ffffa5'>▆</span>", // yellow
+            "<span color='#ff9977'>▇</span>", // orange
+            "<span color='#dd532e'>█</span>"  // red
+       ]
     },
     "custom/music": {
         "format": "  {}",
@@ -46,17 +62,18 @@
         "on-scroll-down":"brightnessctl set 5%-"
     },
     "battery": {
-        "format": "<span font='Font Awesome 5 Free 11'>{icon}</span>  {capacity}% - {time}",
+        "format": "{icon} {capacity}%",
         "format-icons": ["", "", "", "", ""],
         "format-time": "{H}h{M}m",
-        "format-charging": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  {capacity}% - {time}",
-        "format-full": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  Charged",
+        "format-charging": " {icon} {capacity}%",
+        "format-full": " {icon} Charged",
         "interval": 30,
         "states": {
             "warning": 25,
             "critical": 10
         },
-        "tooltip": false,
+        "tooltip": true,
+        "tooltip-format": "Remaining: {time}",
         "on-click": "2"
     },
     "pulseaudio": {
@@ -90,13 +107,14 @@
     },
     "bluetooth": {
         "format": " {status}",
-        "format-connected": " {device_alias}",
-        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        //"format-connected": " {device_alias}",
+        "format-connected": "\udb80\udcb1",
+        //"format-connected-battery": " {device_alias} {device_battery_percentage}%",
         "format-device-preference": [ "device1", "device2" ],
         "tooltip-format": "My Device : {controller_alias}({controller_address})\nTotal Active Connections: {num_connections}",
         "tooltip-format-connected": "My Device : {controller_alias}({controller_address})\nTotal Active Connections: {num_connections}\n\n{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t {device_battery_percentage}%",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t\udb82\udd48 {device_battery_percentage}%",
         "menu" : "devices",
         "on-click": "blueman-manager"
     },
