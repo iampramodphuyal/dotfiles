@@ -1,46 +1,46 @@
 @import "mocha.css";
 
 * {
-  font-family: JetBrains Mono Nerd Font;
-  font-size: 14px;
-  min-height: 0;
+    font-family: JetBrains Mono Nerd Font;
+    font-size: 13px;
+    min-height: 0;
 }
 
 #waybar {
-  /*background: transparent;*/
-  background: @base;
-  color: @text;
-  margin: 2px 2px;
+    /*background: transparent;*/
+    background: @base;
+    color: @text;
+    margin: 1px 1px;
 }
 
 tooltip {
-  background: rgba(24, 24, 37, 0.5);
-  border: 1px solid rgba(100, 114, 125, 0.5);
+    background: rgba(24, 24, 37, 0.5);
+    border: 1px solid rgba(100, 114, 125, 0.5);
 }
 tooltip label {
-  color: @lavender;
+    color: @lavender;
 }
 #workspaces {
-  border-radius: 1rem;
-  margin: 3px;
-  background-color: @surface0;
-  /*margin-left: 1rem;*/
+    border-radius: 1rem;
+    margin: 3px;
+    background-color: @surface0;
+    /*margin-left: 1rem;*/
 }
 
 #workspaces button {
-  color: @lavender;
-  border-radius: 1rem;
-  padding: 0.2rem;
+    color: @lavender;
+    border-radius: 1rem;
+    padding: 0.2rem;
 }
 
 #workspaces button.active {
-  color: @sky;
-  border-radius: 1rem;
+    color: @sky;
+    border-radius: 1rem;
 }
 
 #workspaces button:hover {
-  color: @sapphire;
-  border-radius: 1rem;
+    color: @sapphire;
+    border-radius: 1rem;
 }
 #network,
 #bluetooth,
@@ -52,79 +52,80 @@ tooltip label {
 #pulseaudio,
 #custom-notification,
 #custom-power {
-  background-color: @surface0;
-  padding: 0.01rem 0.85rem;
-  margin: 3px 0;
+    /*background-color: @surface0;*/
+    /*padding: 0.01rem 0.85rem;*/
+    padding: 0.01rem 0.5rem;
+    margin: 1px 0;
 }
 
 #clock {
-  color: @blue;
-  /*border-radius: 0px 1rem 1rem 0px;*/
-  border-radius: 1rem;
-  margin-right: 1rem;
+    color: @blue;
+    /*border-radius: 0px 1rem 1rem 0px;*/
+    border-radius: 1rem;
+    margin-right: 1rem;
 }
 
 #battery {
-  color: @green;
+    color: @green;
 }
 
 #battery.charging {
-  color: @green;
+    color: @green;
 }
 
 #battery.warning:not(.charging) {
-  color: @red;
+    color: @red;
 }
 
 #backlight {
-  color: @yellow;
+    color: @yellow;
 }
 
 /*#backlight,*/
 #battery {
-  border-radius: 0px 1rem 1rem 0px;
+    border-radius: 0px 1rem 1rem 0px;
 }
 
 #pulseaudio {
-  color: @maroon;
-  border-radius: 1rem 0px 0px 1rem;
-  margin-left: 1rem;
+    color: @maroon;
+    border-radius: 1rem 0px 0px 1rem;
+    margin-left: 1rem;
 }
 
 #bluetooth {
-  border-radius: 0px 1rem 1rem 0px;
-  color: @blue;
+    border-radius: 0px 1rem 1rem 0px;
+    color: @blue;
 }
 
 #bluetooth.connected {
-  color: @green;
+    color: @green;
 }
 
 #bluetooth.disabled {
-  color: @mantle;
+    color: @mantle;
 }
 
 #network {
-  border-radius: 1rem 0px 0px 1rem;
+    border-radius: 1rem 0px 0px 1rem;
 }
 
 #custom-music {
-  color: @mauve;
-  border-radius: 1rem;
+    color: @mauve;
+    border-radius: 1rem;
 }
 
 #custom-notification {
-  border-radius: 1rem 0px 0px 1rem;
-  color: @lavender;
+    border-radius: 1rem 0px 0px 1rem;
+    color: @lavender;
 }
 
 #custom-power {
-  margin-right: 1rem;
-  border-radius: 0px 1rem 1rem 0px;
-  color: @red;
+    margin-right: 1rem;
+    border-radius: 0px 1rem 1rem 0px;
+    color: @red;
 }
 
 #tray {
-  margin-right: 1rem;
-  border-radius: 1rem;
+    margin-right: 1rem;
+    border-radius: 1rem;
 }
