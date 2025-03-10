@@ -107,10 +107,9 @@
     },
     "bluetooth": {
         "format": " {status}",
-        //"format-connected": " {device_alias}",
         "format-connected": "\udb80\udcb1",
         //"format-connected-battery": " {device_alias} {device_battery_percentage}%",
-        "format-device-preference": [ "device1", "device2" ],
+        //"format-device-preference": [ "device1", "device2" ],
         "tooltip-format": "My Device : {controller_alias}({controller_address})\nTotal Active Connections: {num_connections}",
         "tooltip-format-connected": "My Device : {controller_alias}({controller_address})\nTotal Active Connections: {num_connections}\n\n{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",

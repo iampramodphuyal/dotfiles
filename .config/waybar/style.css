@@ -7,8 +7,8 @@
 }
 
 #waybar {
-    /*background: transparent;*/
-    background: @base;
+    background: transparent;
+    /*background: @base;*/
     color: @text;
     margin: 1px 1px;
 }
@@ -54,8 +54,8 @@ tooltip label {
 #custom-power {
     /*background-color: @surface0;*/
     /*padding: 0.01rem 0.85rem;*/
-    padding: 0.01rem 0.5rem;
-    margin: 1px 0;
+    padding: 0.1rem 0.5rem;
+    margin: 1px 1px;
 }
 
 #clock {
@@ -89,7 +89,6 @@ tooltip label {
 #pulseaudio {
     color: @maroon;
     border-radius: 1rem 0px 0px 1rem;
-    margin-left: 1rem;
 }
 
 #bluetooth {
