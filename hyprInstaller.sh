@@ -1,27 +1,9 @@
 #! /bin/bash
 
-echo "Installing Hyprland..."
+echo "Installing Hyprland With Configs..."
+echo "...................................."
 yay -Syu
-yay hyprland
-sudo pacman -S xdg-desktop-portal-hyprland
-yay blueman
-yay network-manager-applet
-yay hyprcursor
-yay cliphist
-yay wl-clipboard
-yay pavucontrol
-yay swaync
-yay cpio
-yay meson
-yay cmake
-yay wayland-protocols
-yay rofi
-yay hyprlock
-yay hyprpaper
-yay hyprland-qtutils
-yay hyprsysteminfo
-yay hyprutils
-yay hyprland-qt-support
-yay wlr-randr
+sudo pacman -S hyprland xdg-desktop-portal-hyprland blueman network-manager-applet hyprcursor cliphist wl-clipboard pavucontrol swaync cpio meson cmake wayland-protocols rofi hyprlock hyprpaper hyprland-qtutils hyprsysteminfo hyprutils hyprland-qt-support wlr-randr
 
-echo "Installation Completed! Reboot the System."
+echo "Installation Completed!"
+echo "Please, Reboot the System."
