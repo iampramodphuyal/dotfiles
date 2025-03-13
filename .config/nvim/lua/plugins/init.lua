@@ -1,13 +1,14 @@
 return {
     {
-        dir = "~/Documents/projects/Winger.nvim",
+        dir = "~/Documents/grepsr/wingman-vim",
         name = 'Winger',
         event = "VeryLazy",
         config = function()
             require("Winger").setup({
                 basePath = '~/Documents/grepsr/'
             })
-        end
+        end,
+        -- enabled=false
     },
     {
         "iampramodphuyal/FTerminal.nvim",

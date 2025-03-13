@@ -48,7 +48,7 @@ disabled = false # Disabled by default
 
 [os.symbols]
 Arch = "󰣇 "
-
+Fedora = " "
 
 [directory]
 style = "bg:#DA627D"

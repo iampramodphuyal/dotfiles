@@ -12,6 +12,7 @@
 export ZSH=$HOME/.oh-my-zsh
 export PATH=$HOME/.config/rofi/scripts:$PATH
 export PATH=$PATH:/usr/local/go/bin
+export PATH="$HOME/.local/bin:$PATH" #for setting up from bash
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -26,7 +27,7 @@ ZSH_THEME="robbyrussell"
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-eval $(thefuck --alias fuck)
+# eval $(thefuck --alias fuck)
 eval "$(zoxide init --cmd cd zsh)"
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -86,6 +87,21 @@ plugins=(
 git
 zsh-autosuggestions
 zsh-syntax-highlighting
+# thefuck
+kitty
+dnf
+aws
+starship
+sudo
+sublime-merge
+systemd
+zoxide
+vi-mode
+pip
+pipenv
+node
+man
+urltools
 )
 
 source $ZSH/oh-my-zsh.sh

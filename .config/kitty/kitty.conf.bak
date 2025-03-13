@@ -32,16 +32,16 @@ background_blur 0
 shell_integration no-cursor
 linux_display_server auto
 
-cursor_blink_interval 0
-cursor_trail 2
-cursor_trail_decay 0.1 0.5
-cursor_trail_start_threshold 2
+cursor_blink_interval 1
+cursor_trail 1
+cursor_trail_decay 0.1 0.3
+cursor_trail_start_threshold 3
 
 map ctrl+[ layout_action decrease_num_full_size_windows
 
 
 # BEGIN_KITTY_FONTS
-font_family      family='CaskaydiaCove Nerd Font Mono' postscript_name=CaskaydiaCoveNFM-Regular
+font_family      family="JetBrains Mono NL"
 bold_font        auto
 italic_font      auto
 bold_italic_font auto

@@ -1,22 +1,21 @@
 {
-    "layer": "top", // Waybar at top layer
-    "position": "top", // Waybar position (top|bottom|left|right)
+    "layer": "top", 
+    "position": "top", 
     "reload_style_on_change":true,
     "width": "auto", 
-    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-left": [ "sway/workspaces", "sway/window"],
     "modules-center": ["clock"],
     "modules-right": ["cpu","bluetooth","pulseaudio", "backlight", "battery", "tray", "custom/notification", "custom/power" ], //add "network" if required
-    "hyprland/workspaces": {
+    "sway/workspaces": {
          "disable-scroll": true,
          "sort-by-name": true,
          "format": " {icon} ",
-         "format-icons": {
-             "default": ""
-         }
      },
-     "hyprland/window": {
+     "sway/window": {
           "separate-outputs": true,
-          "format":"{initialTitle}"
+          //"format":"{initialTitle}",
+          "format":"{title}",
+          "max-length":50
     },
     "tray": {
         "icon-size": "auto",
@@ -107,7 +106,7 @@
     },
     "bluetooth": {
         "format": " {status}",
-        "format-connected": "\udb80\udcb1",
+   //     "format-connected": "\udb80\udcb1",
         //"format-connected-battery": " {device_alias} {device_battery_percentage}%",
         //"format-device-preference": [ "device1", "device2" ],
         "tooltip-format": "My Device : {controller_alias}({controller_address})\nTotal Active Connections: {num_connections}",

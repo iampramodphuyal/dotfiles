@@ -1,0 +1,156 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "reload_style_on_change":true,
+    "width": "auto", 
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["clock"],
+    "modules-right": ["cpu","bluetooth","pulseaudio", "backlight", "battery", "tray", "custom/notification", "custom/power" ], //add "network" if required
+    "hyprland/workspaces": {
+         "disable-scroll": true,
+         "sort-by-name": true,
+         "format": " {icon} ",
+         "format-icons": {
+             "default": ""
+         }
+     },
+     "hyprland/window": {
+          "separate-outputs": true,
+          "format":"{initialTitle}"
+    },
+    "tray": {
+        "icon-size": "auto",
+        "spacing": 5
+    },
+    "cpu": {
+        "interval": 0.5,
+        "format": "{usage}%",
+        "max-length": 16,
+        "format": "\uf4bc {usage}% {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}",
+        "format-icons": [
+            "<span color='#69ff94'>▁</span>", // green
+            "<span color='#2aa9ff'>▂</span>", // blue
+            "<span color='#f8f8f2'>▃</span>", // white
+            "<span color='#f8f8f2'>▄</span>", // white
+            "<span color='#ffffa5'>▅</span>", // yellow
+            "<span color='#ffffa5'>▆</span>", // yellow
+            "<span color='#ff9977'>▇</span>", // orange
+            "<span color='#dd532e'>█</span>"  // red
+       ]
+    },
+    "custom/music": {
+        "format": "  {}",
+        "escape": true,
+        "interval": 5,
+        "tooltip": false,
+        "exec": "playerctl metadata --format='{{ title }}'",
+        "on-click": "playerctl play-pause",
+        "max-length": 50
+    },
+    "clock": {
+        "timezone": "Asia/Kathmandu",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%a %d %b - %H:%M}",
+    },
+    "backlight": {
+      "tooltip":true,
+        "tooltip-format": "Brightness: {percent} %",
+        "device": "intel_backlight",
+        "format": "{icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "on-scroll-up":"brightnessctl set 10%+",
+        "on-scroll-down":"brightnessctl set 5%-"
+    },
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "format-time": "{H}h{M}m",
+        "format-charging": " {icon} {capacity}%",
+        "format-full": " {icon} Charged",
+        "interval": 30,
+        "states": {
+            "warning": 25,
+            "critical": 10
+        },
+        "tooltip": true,
+        "tooltip-format": "Remaining: {time}",
+        "on-click": "2"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "headset": "",
+            "hands-free": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "network": {
+        "tooltip": true,
+        "format":"\uf6ff",
+        "format-wifi": "  {essid}",
+        "rotate": 0,
+        "format-ethernet": "󰈀 ",
+        "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+        "format-linked": "󰈀 {ifname} (No IP)",
+        "format-disconnected": "󰖪 ",
+        "tooltip-format-disconnected": "Disconnected",
+        "format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
+        "interval": 2,
+        "on-click-right": "nm-connection-editor --show"
+    },
+    "bluetooth": {
+        "format": " {status}",
+        "format-connected": "\udb80\udcb1",
+        //"format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        //"format-device-preference": [ "device1", "device2" ],
+        "tooltip-format": "My Device : {controller_alias}({controller_address})\nTotal Active Connections: {num_connections}",
+        "tooltip-format-connected": "My Device : {controller_alias}({controller_address})\nTotal Active Connections: {num_connections}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t\udb82\udd48 {device_battery_percentage}%",
+        "menu" : "devices",
+        "on-click": "blueman-manager"
+    },
+
+    "custom/lock": {
+        "tooltip": false,
+        "on-click": "sh -c '(sleep 0.5s; swaylock --grace 0)' & disown",
+        "format": ""
+    },
+
+    "custom/power": {
+        "tooltip": false,
+        "on-click": "wlogout &",
+        //"format": "襤"
+        "format": "󰐥",
+    },
+
+    "custom/notification": {
+        "format":" {}",
+        "format-icons": {
+            "notification": "<span foreground='red'><sup></sup></span>",
+            "none": "",
+            "dnd-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-none": "",
+            "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "inhibited-none": "",
+            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-inhibited-none": ""
+        },
+      "tooltip-format":"{} Notifications",
+      "return-type": "json",
+      "exec-if": "which swaync-client",
+      "exec": "swaync-client -swb",
+      //"exec":"~/dotfiles/.config/waybar/scripts/notification.sh",
+      //"interval":3,
+      "on-click": "swaync-client -t -sw",
+      "on-click-right": "swaync-client -d -sw",
+      "escape": true
+  }
+}
