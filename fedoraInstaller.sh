@@ -3,7 +3,7 @@
 
 echo "Installing Fedora With Configs..."
 echo "...................................."
-sudo dnf install neovim zsh zsh-autosuggestions zsh-syntax-highlighting lazygit flameshot zoxide git fzf
+sudo dnf install bat neovim zoxide git fzf kitty node docker --skip-unavailable
 
 
 echo "Installation Completed!"
