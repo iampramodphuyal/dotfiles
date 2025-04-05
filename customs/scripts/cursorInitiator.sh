@@ -11,5 +11,5 @@ if [[ ! -f "$APPIMAGE" ]]; then
 fi
 
 # Run the IDE with the given directory
-"$APPIMAGE" "$DIR" 
+"$APPIMAGE" "$DIR"
 
