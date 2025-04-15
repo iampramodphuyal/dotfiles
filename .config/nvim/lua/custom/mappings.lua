@@ -5,3 +5,9 @@ map("n", "<leader>gl", ":Gitsigns toggle_current_line_blame<CR>", { desc = "Git 
 map("n", "<leader>fl", ":ShowCurrentFilePath<CR>", { desc = "Show current file path" })
 map("n", "<leader>fp", ":ShowParentFolder<CR>", { desc = "Show current file's parent path" })
 map("n", "<leader>fj", ":%!jq .<CR>", { desc = "Format JSON with jq on current file" })
+
+-- Tmux Integrated mapping below
+map("n", "<C-h>", ":TmuxNavigateLeft<CR>", { desc = "Window Left" })
+map("n", "<C-j>", ":TmuxNavigateDown<CR>", { desc = "Window Down" })
+map("n", "<C-k>", ":TmuxNavigateUp<CR>", { desc = "Window Up" })
+map("n", "<C-l>", ":TmuxNavigateRight<CR>", { desc = "Window Right" })

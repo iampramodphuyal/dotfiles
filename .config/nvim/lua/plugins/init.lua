@@ -11,6 +11,10 @@ return {
         -- enabled=false
     },
     {
+        "christoomey/vim-tmux-navigator",
+        lazy = false
+    },
+    {
         "iampramodphuyal/FTerminal.nvim",
         event = "VeryLazy",
         config = function()
