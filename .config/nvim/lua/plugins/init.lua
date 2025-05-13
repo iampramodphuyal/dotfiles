@@ -94,8 +94,10 @@ return {
                 "vimdoc",
                 "javascript",
                 "php",
-                -- "html",
-                -- "css",
+                "html",
+                "css",
+                "go",
+                "python"
             },
         },
         event = 'VeryLazy'
