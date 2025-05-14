@@ -4,10 +4,12 @@
     font-family: JetBrains Mono;
     font-size: 13px;
     min-height: 0.5px;
+    border: none;
 }
 
 #waybar {
-    background: transparent;
+    /* background: transparent; */
+    background: rgba(43, 48, 59, 0.25);
     color: @text;
     margin: 0.5px 0.5px;
     padding: 0.2rem;
@@ -127,10 +129,6 @@ tooltip label {
     color: @green;
 }
 
-#battery.warning:not(.charging) {
-    color: @red;
-}
-
 #backlight {
     margin-left: 1rem;
     border-radius: 0.3rem 0rem 0rem 0.3rem;
@@ -158,4 +156,21 @@ tooltip label {
 #custom-lock {
     color: @pink;
     border-radius: 0rem 0.3rem 0.3rem 0rem;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
+    }
+}
+
+#battery.warning:not(.charging) {
+    background: #f53c3c;
+    color: white;
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }

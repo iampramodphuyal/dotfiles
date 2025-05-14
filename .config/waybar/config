@@ -84,7 +84,7 @@
             "critical": 10
         },
         "tooltip": true,
-        "tooltip-format": "Remaining: {time}",
+        "tooltip-format": "Time Remaining: {time}\nCycles: {cycles}\nBattery Health: {health}\nStatus: {capacity} %",
         "on-click": "2"
     },
     "pulseaudio": {
@@ -153,7 +153,8 @@
                 "drawer": {
                     "transition-duration": 500,
                     "children-class": "not-power",
-                    "transition-left-to-right": true,
+                    //"transition-left-to-right": true,
+                    "transition-right-to-left": true,
                 },
             "modules": [
                 "custom/notification","bluetooth", "network","pulseaudio",
@@ -189,6 +190,4 @@
       "on-click-right": "swaync-client -d -sw",
       "escape": true
   }
-
-
 }

@@ -1,42 +1,30 @@
-
-{
-    "label" : "lock",
-    "action" : "swaylock",
-    "text" : "Lock",
-    "keybind" : "l"
-}
-
-{
-    "label" : "logout",
-    "action" : "hyprctl dispatch exit 0",
-    "text" : "Logout",
-    "keybind" : "e"
-}
-
-{
-    "label" : "suspend",
-    "action" : "echo TODO",
-    "text" : "Suspend",
-    "keybind" : "u"
-}
-
 {
     "label" : "shutdown",
-    "action" : "sudo runit-init 0",
+    "action" : "systemctl poweroff",
     "text" : "Shutdown",
     "keybind" : "s"
 }
-
+{
+    "label" : "reboot",
+    "action" : "systemctl reboot",
+    "text" : "Reboot",
+    "keybind" : "r"
+}
+{
+    "label" : "logout",
+    "action" : "loginctl kill-session $XDG_SESSION_ID",
+    "text" : "Logout",
+    "keybind" : "e"
+}
 {
     "label" : "hibernate",
-    "action" : "echo TODO",
+    "action" : "swaylock -f && systemctl hibernate",
     "text" : "Hibernate",
     "keybind" : "h"
 }
-
 {
-    "label" : "reboot",
-    "action" : "sudo runit-init 6",
-    "text" : "Reboot",
-    "keybind" : "r"
+    "label" : "lock",
+    "action" : "hyprlock",
+    "text" : "Lock",
+    "keybind" : "l"
 }
