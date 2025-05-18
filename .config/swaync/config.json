@@ -5,9 +5,9 @@
     "cssPriority": "user",
     "control-center-margin-top": 10,
     "control-center-margin-bottom": 10,
-    "control-center-margin-right": 2,
+    "control-center-margin-right": 10,
     "control-center-margin-left": 0,
-    "notification-icon-size": 64,
+    "notification-icon-size": 20,
     "notification-body-image-height": 128,
     "notification-body-image-width": 200,
     "timeout": 6,
@@ -32,7 +32,7 @@
         },
         "menubar#desktop": {
             "menu#screenshot": {
-                "label": "\t󰄀   Screenshot\t",
+                "label": "\t󰄀 Screenshot\t",
                 "position": "left",
                 "actions": [
                     {
@@ -46,23 +46,23 @@
                 ]
             },
             "menu#power": {
-                "label": "\t   Power Menu\t  ",
+                "label": "\t Power Menu\t  ",
                 "position": "left",
                 "actions": [
                     {
-                        "label": "   Logout",
+                        "label": " Logout",
                         "command": "hyprctl dispatch exit 0"
                     },
                     {
-                        "label": "   Shut down",
+                        "label": " Shut down",
                         "command": "systemctl poweroff"
                     },
                     {
-                        "label": "󰤄   Suspend",
+                        "label": "󰤄 Suspend",
                         "command": "systemctl suspend"
                     },
                     {
-                        "label": "   Reboot",
+                        "label": " Reboot",
                         "command": "systemctl reboot"
                     }
                 ]

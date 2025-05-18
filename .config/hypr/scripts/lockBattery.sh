@@ -1,7 +1,7 @@
 # !/bin/bash
 #
 
-ICONS=("  ", "  ", "  ", "  ", "  ")
+ICONS=(" " " " " " " " " " " ")
 charging_icon="  "
 
 # Get the current battery percentage
@@ -15,5 +15,5 @@ icon_index=$((battery_percentage / 20))
 # Get the corresponding icon
 battery_icon=${ICONS[icon_index]}
 
-[ "$battery_status" = "Charging" ] && echo "$charging_icon$battery_icon$battery_percentage% " || echo "$battery_icon$battery_percentage% "
+[ "$battery_status" = "Charging" ] && echo "$charging_icon$battery_icon$battery_percentage% " || echo "$battery_icon$battery_percentage%"
 

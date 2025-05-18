@@ -1,10 +1,10 @@
 @define-color shadow rgba(0, 0, 0, 0.25);
 /*
-          *
-          * Catppuccin Mocha palette
-          * Maintainer: rubyowo
-          *
-          */
+*
+* Catppuccin Mocha palette
+* Maintainer: rubyowo
+*
+*/
 
 @define-color base   #1E1D2E;
 @define-color mantle #181825;
@@ -41,13 +41,12 @@
 @define-color mauve_lighter #caa6f7;
 
 * {
-    /* font-family: "Product Sans"; */
     font-family: "JetBrains Mono";
     background-clip: border-box;
 }
 
 /* #notifications_box { */
-/*   border: solid 4px red; */
+/*     border: solid 4px red; */
 /* } */
 
 label {
@@ -57,12 +56,8 @@ label {
 .notification {
     border: none;
     box-shadow: none;
-    /* margin: 0px; */
-    /* margin: -15px -10px -15px -10px; */
     border-radius: 4px;
-    background: inherit;
-    /* background: @theme_bg_color; */
-    /* background: shade(alpha(@borders, 2.55), 0.25); */
+    background: shade(alpha(@borders, 2.55), 0.25);
 }
 
 .notification button {
@@ -74,20 +69,18 @@ label {
 }
 
 .notification button:hover {
-    /* background: @surface0; */
     background: @insensitive_bg_color;
 }
 
 .notification-content {
-    min-height: 64px;
-    margin: 10px;
-    padding: 0px;
-    border-radius: 0px;
+    background: transparent;
+    /* min-height: 64px; */
+    margin: 8px;
+    padding: 6px;
+    /* border-radius: 0px; */
 }
 
 .close-button {
-    /* background: transparent; */
-    /* color: transparent; */
     background: #f7768e;
     color: @cc-bg;
     text-shadow: none;
@@ -115,9 +108,8 @@ label {
 
 .notification-action {
     border-radius: 0px;
-    padding: 2px;
+    /* padding: 2px; */
     color: @text;
-    /* color: @theme_text_color; */
 }
 
 /* add bottom border radius to eliminate clipping */
@@ -134,8 +126,8 @@ label {
 .summary {
     color: @text;
     /* color: @theme_text_color; */
-    font-size: 14px;
-    padding: 0px;
+    font-size: 12px;
+    /* padding: 0px; */
 }
 
 .time {
@@ -148,13 +140,13 @@ label {
 }
 
 .body {
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 12px;
+    /* font-weight: 500; */
     color: @subtext1;
     /* color: alpha(@text, 0.9); */
     /* color: alpha(@theme_text_color, 0.9); */
     text-shadow: none;
-    margin: 0px 0px 0px 0px;
+    /* margin: 0px 0px 0px 0px; */
 }
 
 .body-image {
@@ -163,9 +155,7 @@ label {
 
 /* The "Notifications" and "Do Not Disturb" text widget */
 .top-action-title {
-    color: @text;
-    /* color: @theme_text_color; */
-    text-shadow: none;
+    color: @theme_text_color;
 }
 
 /* Control center */
@@ -184,19 +174,15 @@ label {
 /* } */
 
 .control-center-list {
-    /* background: @base; */
     background: alpha(@crust, 0.8);
     min-height: 5px;
-    /* border: 1px solid @surface1; */
     border-top: none;
-    border-radius: 0px 0px 4px 4px;
+    /* border-radius: 0px 0px 4px 4px; */
 }
 
 .control-center-list-placeholder,
 .notification-group-icon,
 .notification-group {
-    /* opacity: 1.0; */
-    /* opacity: 0; */
     color: alpha(@theme_text_color, 0.5);
 }
 
@@ -204,14 +190,12 @@ label {
     /* unset the annoying focus thingie */
     opacity: 0;
     box-shadow: none;
-    /* selectable: no; */
 }
 
 .notification-group > box {
     all: unset;
     background: transparent;
-    /* background: alpha(currentColor, 0.072); */
-    padding: 4px;
+    /* padding: 4px; */
     margin: 0px;
     /* margin: 0px -5px; */
     border: none;
@@ -223,12 +207,9 @@ label {
     outline: none;
     transition: all 1s ease;
     background: alpha(@mantle, 0.8);
-    /* background: @theme_bg_color; */
-    border: 0px solid @crust;
-    margin: 10px 5px 0px 5px;
-    border-radius: 14px;
-    /* box-shadow: 0px 0px 4px black; */
-    /* background: alpha(currentColor, 0.05); */
+    /* background: transparent; */
+    margin: 10px 0px 0px 0px;
+    border-radius: 4px;
 }
 
 .notification-row:focus,
@@ -242,12 +223,12 @@ label {
     background: transparent;
     border: none;
     margin: 0px;
-    padding: 5px 10px 5px 10px;
+    /* padding: 5px 10px 5px 10px; */
     box-shadow: none;
 }
 
 .control-center-list > row:last-child {
-    padding: 5px 10px 10px 10px;
+    /* padding: 5px 10px 10px 10px; */
 }
 
 /* Window behind control center and on all other monitors */
@@ -259,12 +240,24 @@ label {
 
 /* Title widget */
 .widget-title {
+    font-size: 1.5rem;
     margin: 0px;
     background: transparent;
-    /* background: @theme_bg_color; */
     border-radius: 4px 4px 0px 0px;
-    /* border: 1px solid @surface1; */
     border-bottom: none;
+}
+
+.widget-title > button {
+    font-size: initial;
+    color: @foreground;
+    text-shadow: none;
+    background: @background;
+    border: 2px solid @accent;
+    box-shadow: none;
+    border-radius: 8px;
+}
+.widget-title > button:hover {
+    background: @background;
 }
 
 .widget-title > label {
@@ -300,7 +293,7 @@ label {
     border-top: none;
 }
 .widget-label > label {
-    font-size: 15px;
+    font-size: 12px;
     font-weight: 400;
 }
 
@@ -400,7 +393,6 @@ label {
     margin: -5px 0px -10px 0px;
     padding: 0px;
     border-radius: 4px;
-    /* background: alpha(currentColor, 0.05); */
     background: alpha(@mantle, 0.8);
 }
 .widget-mpris > box > button:nth-child(1),
@@ -474,7 +466,7 @@ carouselindicatordots {
     border-bottom: none;
     font-size: 13px;
     font-weight: 600;
-    border-radius: 0px;
+    border-radius: 10px;
     margin: 0px;
     padding: 0px;
 }
@@ -501,7 +493,7 @@ carouselindicatordots {
 .widget-volume > revealer > list {
     background: alpha(@mantle, 0.8);
     /* background: alpha(currentColor, 0.05); */
-    border-radius: 4px;
+    border-radius: 10px;
     margin-top: 5px;
     padding: 0px;
 }
@@ -541,8 +533,8 @@ carouselindicatordots {
 
 .widget-dnd > switch {
     background: alpha(@mantle, 0.8);
-    font-size: initial;
-    border-radius: 8px;
+    font-size: 0.9rem;
+    border-radius: 4px;
     box-shadow: none;
     padding: 2px;
 }
@@ -561,7 +553,7 @@ carouselindicatordots {
 
 .widget-dnd > switch slider {
     background: alpha(@mauve_lighter, 0.8);
-    border-radius: 6px;
+    border-radius: 4px;
 }
 
 /* Toggles */
@@ -578,32 +570,36 @@ carouselindicatordots {
 }
 
 /* Sliders */
-scale {
-    padding: 0px;
-    margin: 0px 10px 0px 10px;
+slider {
+    /* padding: 0px; */
+    /* margin: 0px 0px 0px 0px; */
+    border-radius: 30px;
+    /* margin: 0px 24px; */
 }
 
-scale trough {
-    border-radius: 4px;
-    background: @surface0;
-    /* background: alpha(currentColor, 0.1); */
-}
-
-scale highlight {
-    border-radius: 5px;
+slider highlight {
+    border-radius: 10px;
     min-height: 10px;
-    margin-right: -5px;
+    margin-right: -1px;
+    background-color: alpha(currentColor, 0.1);
 }
 
-scale slider {
-    margin: -10px;
-    min-width: 10px;
-    min-height: 10px;
-    background: transparent;
-    box-shadow: none;
-    padding: 0px;
+slider slider {
+    background-color: #fff;
+    border-radius: 50%;
+    min-width: 14px;
+    min-height: 14px;
 }
-scale slider:hover {
+
+slider trough {
+    min-height: 6px; /* height of the slider track */
+    border-radius: 6px;
+    margin: 6px 0;
+    background-color: alpha(currentColor, 0.1);
+}
+
+slider slider:hover {
+    background-color: #00cc66;
 }
 
 .right.overlay-indicator {
