@@ -23,6 +23,7 @@ tooltip {
 tooltip label {
     color: @lavender;
 }
+
 #workspaces {
     margin: 3px;
     background-color: @surface0;
@@ -63,7 +64,7 @@ tooltip label {
 }
 
 #custom-notification {
-    border-radius: 0.3rem 0rem 0rem 0.3rem;
+    /* border-radius: 0.3rem 0rem 0rem 0.3rem; */
     color: @lavender;
 }
 
@@ -125,10 +126,6 @@ tooltip label {
     color: @green;
 }
 
-#battery.charging {
-    color: @green;
-}
-
 #backlight {
     margin-left: 1rem;
     border-radius: 0.3rem 0rem 0rem 0.3rem;
@@ -165,12 +162,87 @@ tooltip label {
     }
 }
 
+/* Animations */
+/* @keyframes charge { */
+/*     0% { */
+/*         height: 0%; */
+/*         background: linear-gradient(0deg, #ff4444, #cc3333, #ff6666); */
+/*     } */
+/*     50% { */
+/*         height: 50%; */
+/*         background: linear-gradient(0deg, #ffaa00, #cc8800, #ffcc44); */
+/*     } */
+/*     100% { */
+/*         height: 100%; */
+/*         background: linear-gradient(0deg, #00ff41, #00cc33, #4dff88); */
+/*     } */
+/* } */
+
+@keyframes flash {
+    0% {
+        opacity: 0.1;
+    }
+    100% {
+        opacity: 0.3;
+        /* transform: translate(-50%, -50%) scale(1); */
+    }
+    50% {
+        opacity: 0.9;
+        /* transform: translate(-50%, -50%) scale(1.2); */
+    }
+}
+
+@keyframes pulse {
+    0% {
+    }
+    100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes countUp {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
 #battery.warning:not(.charging) {
     background: #f53c3c;
     color: white;
-    animation-name: blink;
-    animation-duration: 1s;
-    animation-timing-function: steps(12);
+    /* animation-name: blink; */
+    animation-name: pulse;
+    animation-duration: 1.5s;
+    animation-timing-function: steps(25);
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    /* animation-direction: normal; */
+}
+
+@keyframes charging-pulse {
+    0% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.3;
+    }
+}
+
+#battery.charging {
+    color: @green;
+    animation: charging-pulse 1s ease-in-out infinite;
 }

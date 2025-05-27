@@ -3,8 +3,8 @@
     "positionX": "right",
     "positionY": "top",
     "cssPriority": "user",
-    "control-center-margin-top": 10,
-    "control-center-margin-bottom": 10,
+    "control-center-margin-top": 7,
+    "control-center-margin-bottom": 14,
     "control-center-margin-right": 10,
     "control-center-margin-left": 0,
     "notification-icon-size": 20,
@@ -15,12 +15,12 @@
     "timeout-critical": 0,
     "fit-to-screen": false,
     "control-center-width": 400,
-    "control-center-height": 850,
+    "control-center-height": 900,
     "notification-window-width": 375,
     "keyboard-shortcuts": true,
     "image-visibility": "when-available",
     "transition-time": 200,
-    "hide-on-clear": false,
+    "hide-on-clear": true,
     "hide-on-action": true,
     "script-fail-notify": true,
     "widgets": ["title", "dnd", "menubar#desktop", "volume", "mpris", "notifications"],
@@ -37,7 +37,8 @@
                 "actions": [
                     {
                         "label": "Whole screen",
-                        "command": "sh -c 'swaync-client -cp, sleep 1, grimblast copysave output \"/tmp/screenshot.png\", swappy -f \"/tmp/screenshot.png\"'"
+                        "_command": "sh -c 'swaync-client -cp, sleep 1, grimblast copysave output \"/tmp/screenshot.png\", swappy -f \"/tmp/screenshot.png\"'",
+                        "command": "grim -g '$(slurp -d)' - | wl-copy"
                     },
                     {
                         "label": "Whole window / Select region",
