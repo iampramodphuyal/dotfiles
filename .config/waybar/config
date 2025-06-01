@@ -5,8 +5,8 @@
     "width": "auto", 
     //"modules-left": [ "sway/workspaces", "sway/window"],
     "modules-left": [ "hyprland/workspaces", "hyprland/window"],
-    "modules-center": ["clock"],
-    "modules-right": ["cpu", "backlight", "battery", "tray","group/networks", "group/power" ], //add "network" if required
+    "modules-center": ["custom/power","cpu", "custom/music","clock", "battery", "custom/lock"],
+    "modules-right": ["tray","group/networks"], //add "network" if required
     "sway/workspaces": {
          "disable-scroll": true,
          "sort-by-name": true,
@@ -29,10 +29,12 @@
           //"format":"{title}",
           "max-length":50
     },
+
     "tray": {
         "icon-size": "auto",
         "spacing": 5
     },
+
     "cpu": {
         "interval": 0.5,
         "format": "{usage}%",
@@ -49,25 +51,28 @@
             "<span color='#dd532e'>█</span>"  // red
        ]
     },
+
     "custom/music": {
-        "format": "  {}",
+        "format": " {}",
         "escape": true,
-        "interval": 5,
+        "interval": 1,
         "tooltip": false,
         "exec": "playerctl metadata --format='{{ title }}'",
         "on-click": "playerctl play-pause",
         "max-length": 50
     },
+
     "clock": {
         "timezone": "Asia/Kathmandu",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": "{:%a %d %b - %H:%M}",
     },
+
     "backlight": {
-      "tooltip":true,
+        "tooltip":true,
         "tooltip-format": "Brightness: {percent} %",
         "device": "intel_backlight",
-        "format": "{icon}",
+        "format": "{icon} {percent}%",
         "format-icons": ["", "", "", "", "", "", "", "", ""],
         "on-scroll-up":"brightnessctl set 10%+",
         "on-scroll-down":"brightnessctl set 5%-"
@@ -117,7 +122,8 @@
         "on-click-right": "nm-connection-editor --show"
     },
     "bluetooth": {
-        "format": "", //     "format-connected": "\udb80\udcb1",
+        "format": "󰂯", 
+        "format-connected": "",
         //"format-connected-battery": " {device_alias} {device_battery_percentage}%",
         //"format-device-preference": [ "device1", "device2" ],
         "tooltip-format": "My Device : {controller_alias}({controller_address})\nTotal Active Connections: {num_connections}",
@@ -129,15 +135,14 @@
     },
 
     "custom/lock": {
-        "tooltip": false,
-        //"on-click": "sh -c '(sleep 0.5s; swaylock --grace 0)' & disown",
+        "tooltip": true,
         "on-click": "hyprlock & disown",
-        "format": ""
+        "format": " "
     },
 
     "group/power":{
         "orientation": "inherit",
-            "drawer": {
+            "_drawer": {
                 "transition-duration": 500,
                 "children-class": "not-power",
                 "transition-left-to-right": true,
@@ -150,22 +155,21 @@
 
     "group/networks":{
             "orientation": "inherit",
-                "drawer": {
+                "_drawer": {
                     "transition-duration": 500,
                     "children-class": "not-power",
                     //"transition-left-to-right": true,
-                    "transition-right-to-left": true,
+                    //"transition-right-to-left": true,
                 },
             "modules": [
-                "custom/notification","bluetooth", "network","pulseaudio",
+                "bluetooth", "network", "backlight" ,"pulseaudio", "custom/notification"
             ]
         },
 
     "custom/power": {
-        "tooltip": false,
+        "tooltip": true,
         "on-click": "shutdown now",
-        //"format": "襤"
-        "format": "󰐥 ",
+        "format": " 󰐥 ",
     },
 
     "custom/notification": {

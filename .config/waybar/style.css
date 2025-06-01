@@ -8,8 +8,9 @@
 }
 
 #waybar {
-    /* background: transparent; */
-    background: rgba(43, 48, 59, 0.25);
+    background: transparent;
+    /* background: rgba(7, 21, 33, 0.77); */
+    /* background: @crust; */
     color: @text;
     margin: 0.5px 0.5px;
     padding: 0.2rem;
@@ -22,11 +23,12 @@ tooltip {
 
 tooltip label {
     color: @lavender;
+    background-color: @mantle;
 }
 
 #workspaces {
     margin: 3px;
-    background-color: @surface0;
+    background-color: @mantle;
 }
 
 #workspaces button {
@@ -36,7 +38,7 @@ tooltip label {
 }
 
 #workspaces button.focused {
-    color: @surface0;
+    color: @mantle;
     background-color: @red;
     border-radius: 0rem;
 }
@@ -56,24 +58,27 @@ tooltip label {
 #custom-notification,
 #pulseaudio,
 #network,
-#bluetooth {
+#bluetooth,
+#custom-power,
+#backlight,
+#custom-lock {
     padding: 0.2rem 0.65rem;
     margin: 0px;
-    background-color: @surface0;
+    background-color: @mantle;
     border-radius: 0rem 0rem 0rem 0rem;
 }
 
 #custom-notification {
-    /* border-radius: 0.3rem 0rem 0rem 0.3rem; */
+    border-radius: 0rem 0.3rem 0.3rem 0rem;
     color: @lavender;
 }
 
 #pulseaudio {
     color: @maroon;
-    border-radius: 0rem 0.3rem 0.3rem 0rem;
 }
 
 #bluetooth {
+    border-radius: 0.3rem 0rem 0rem 0.3rem;
     color: @blue;
 }
 
@@ -87,7 +92,7 @@ tooltip label {
 
 #network {
     border-radius: 0rem 0rem 0rem 0rem;
-    background-color: @surface0;
+    background-color: @mantle;
 }
 
 #network.disconnected {
@@ -98,55 +103,43 @@ tooltip label {
     color: @text;
 }
 
-#custom-music,
-#tray,
-#backlight {
+#tray {
     padding: 0.1rem 0.4rem;
     margin: 0px 0.4rem;
-    background-color: @surface0;
+    background-color: @mantle;
     border-radius: 0.3rem 0.3rem 0.3rem 0.3rem;
 }
 
-#clock {
-    padding: 0.1rem 0.4rem;
-    color: @peach;
-    border-radius: 0.3rem 0.3rem 0.3rem 0.3rem;
-    background-color: @surface0;
-}
-
-#backlight,
+#clock,
+#cpu,
+#custom-music,
 #battery {
     padding: 0.1rem 0.4rem;
-    background-color: @surface0;
+    color: @peach;
+    background-color: @mantle;
+}
+
+#battery {
+    padding: 0.1rem 0.4rem;
+    background-color: @mantle;
     margin: 0px;
 }
 
 #battery {
-    border-radius: 0rem 0.3rem 0.3rem 0rem;
     color: @green;
 }
 
 #backlight {
-    margin-left: 1rem;
-    border-radius: 0.3rem 0rem 0rem 0.3rem;
     color: @yellow;
-    padding-left: 0.5rem;
 }
 
 #custom-music {
     color: @mauve;
-    border-radius: 1rem;
-}
-
-#custom-power,
-#custom-lock {
-    padding: 0.1rem 0.6rem;
-    background-color: @surface0;
+    /* border-radius: 1rem; */
 }
 
 #custom-power {
     color: @red;
-    margin-left: 0.3rem;
     border-radius: 0.3rem 0rem 0rem 0.3rem;
 }
 
@@ -161,22 +154,6 @@ tooltip label {
         color: black;
     }
 }
-
-/* Animations */
-/* @keyframes charge { */
-/*     0% { */
-/*         height: 0%; */
-/*         background: linear-gradient(0deg, #ff4444, #cc3333, #ff6666); */
-/*     } */
-/*     50% { */
-/*         height: 50%; */
-/*         background: linear-gradient(0deg, #ffaa00, #cc8800, #ffcc44); */
-/*     } */
-/*     100% { */
-/*         height: 100%; */
-/*         background: linear-gradient(0deg, #00ff41, #00cc33, #4dff88); */
-/*     } */
-/* } */
 
 @keyframes flash {
     0% {
