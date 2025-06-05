@@ -52,20 +52,38 @@
        ]
     },
 
+    "mpris": {
+      "interval": 1,
+      "format": "<b>{player_icon} {dynamic}</b>",
+      "format-paused": "<b>{status_icon} <i>{dynamic}</i></b>",
+      "player-icons": {
+        "default": " 󰎇 ",
+        "mpv": " 🎵 ",
+        "spotify": "  ",
+        "youtube": "  ",
+        "firefox": " 󰈹 ",
+        "chrome": "  "
+      },
+      "status-icons": {
+        "paused": "⏸"
+      },
+    },
+
+
     "custom/music": {
-        "format": " {}",
+        "format": " 󰎇 {}",
         "escape": true,
         "interval": 1,
         "tooltip": false,
         "exec": "playerctl metadata --format='{{ title }}'",
         "on-click": "playerctl play-pause",
-        "max-length": 50
+        "max-length": 40
     },
 
     "clock": {
         "timezone": "Asia/Kathmandu",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%a %d %b - %H:%M}",
+        "format": "<b>{:%a, %d %b | %H:%M}</b>",
     },
 
     "backlight": {

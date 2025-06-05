@@ -13,11 +13,11 @@
     /* background: @crust; */
     color: @text;
     margin: 0.5px 0.5px;
-    padding: 0.2rem;
+    /* padding: 0.2rem; */
 }
 
 tooltip {
-    background: rgba(24, 24, 37, 0.5);
+    background-color: @mantle;
     border: 1px solid rgba(100, 114, 125, 0.5);
 }
 
@@ -112,11 +112,16 @@ tooltip label {
 
 #clock,
 #cpu,
+#mpris,
 #custom-music,
 #battery {
     padding: 0.1rem 0.4rem;
     color: @peach;
     background-color: @mantle;
+}
+
+#clock {
+    font-size: 14px;
 }
 
 #battery {
@@ -133,6 +138,7 @@ tooltip label {
     color: @yellow;
 }
 
+#mpris,
 #custom-music {
     color: @mauve;
     /* border-radius: 1rem; */
