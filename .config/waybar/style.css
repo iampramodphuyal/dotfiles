@@ -8,9 +8,9 @@
 }
 
 #waybar {
-    background: transparent;
+    /* background: transparent; */
     /* background: rgba(7, 21, 33, 0.77); */
-    /* background: @crust; */
+    background: @crust;
     color: @text;
     margin: 0.5px 0.5px;
     /* padding: 0.2rem; */
