@@ -81,7 +81,6 @@ eval "$(zoxide init --cmd cd zsh)"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
-# ZSH_CUSTOM=~/.grepsr
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
@@ -109,7 +108,7 @@ urltools
 )
 
 source $ZSH/oh-my-zsh.sh
-source ~/.grepsr/alias
+# source ~/.grepsr/alias
 source ~/dotfiles/alias/alias
 source <(fzf --zsh)
 

@@ -3,7 +3,7 @@
 
 echo "Installing Fedora With Configs..."
 echo "...................................."
-sudo dnf install bat neovim zoxide git fzf kitty node docker --skip-unavailable
+sudo dnf install bat neovim zoxide git fzf kitty node docker lazygit --skip-unavailable
 
 
 echo "Installation Completed!"
