@@ -108,7 +108,7 @@ urltools
 )
 
 source $ZSH/oh-my-zsh.sh
-# source ~/.grepsr/alias
+source ~/.grepsr/alias
 source ~/dotfiles/alias/alias
 source <(fzf --zsh)
 

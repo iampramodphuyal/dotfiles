@@ -19,6 +19,7 @@ pkgArch(){
 pkgFedora(){
   echo "Detected Fedora Linux..."
   sudo dnf update
+  sudo dnf copr enable solopasha/hyprland 
   sudo dnf install hyprland hyprpaper network-manager-applet hyprcursor wl-clipboard swaync waybar cmake meson rofi hyprlock hyprland-qtutils hyprland-qt-support hyprutils wlr-randr xdg-desktop-portal-hyprland blueman cliphist --skip-unavailable
 }
 
