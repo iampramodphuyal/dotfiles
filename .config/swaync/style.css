@@ -97,13 +97,12 @@ label {
 /*** Notification ***/
 /* Notification header: This is title of each notification */
 .summary {
-    color: @theme_text_color;
+    color: @text;
     font-size: 12px;
 }
 
 .time {
     color: @subtext0;
-    /* color: alpha(@theme_text_color, 0.9); */
     font-size: 12px;
     text-shadow: none;
     margin: 0px 0px 0px 0px;
@@ -115,7 +114,6 @@ label {
     /* font-weight: 500; */
     color: @subtext1;
     /* color: alpha(@text, 0.9); */
-    /* color: alpha(@theme_text_color, 0.9); */
     text-shadow: none;
     /* margin: 0px 0px 0px 0px; */
 }
@@ -126,7 +124,7 @@ label {
 
 /* The "Notifications" and "Do Not Disturb" text widget */
 .top-action-title {
-    color: @theme_text_color;
+    color: @subtext0;
 }
 
 /* Control center */
@@ -153,7 +151,7 @@ label {
 .control-center-list-placeholder,
 .notification-group-icon,
 .notification-group {
-    color: alpha(@theme_text_color, 0.5);
+    color: @subtext0;
 }
 
 .notification-group {
@@ -242,7 +240,6 @@ label {
     margin-right: 10px;
     background: transparent;
     color: @text;
-    /* color: @theme_text_color; */
     border: none;
     border-radius: 4px;
 }
@@ -257,7 +254,6 @@ label {
     padding: 0px;
     min-height: 5px;
     background: alpha(@mantle, 0.8);
-    /* background: @theme_bg_color; */
     border-radius: 0px 0px 4px 4px;
     /* border: 1px solid @surface1; */
     border-top: none;
@@ -270,7 +266,6 @@ label {
 /* Menubar */
 .widget-menubar {
     background: transparent;
-    /* background: @theme_bg_color; */
     /* border: 1px solid @surface1; */
     border-top: none;
     border-bottom: none;
@@ -317,7 +312,6 @@ label {
 
 /* Buttons grid */
 .widget-buttons-grid {
-    /* background-color: @theme_bg_color; */
     background: transparent;
     /* border: 1px solid @surface1; */
     border-top: none;
@@ -430,7 +424,6 @@ carouselindicatordots {
 .widget-volume {
     background: transparent;
     /* background-color: @crust; */
-    /* background-color: @theme_bg_color; */
     /* border: 1px solid @surface1; */
     border-top: none;
     border-bottom: none;
@@ -529,14 +522,12 @@ carouselindicatordots {
 /* Toggles */
 .toggle:checked {
     background: @surface1;
-    /* background: @theme_selected_bg_color; */
 }
 /*.toggle:not(:checked) {
             color: rgba(128, 128, 128, 0.5);
           }*/
 .toggle:checked:hover {
     background: @surface2;
-    /* background: alpha(@theme_selected_bg_color, 0.75); */
 }
 
 /* Sliders */

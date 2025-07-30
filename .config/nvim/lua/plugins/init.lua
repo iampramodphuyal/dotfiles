@@ -11,6 +11,20 @@ return {
         -- enabled=false
     },
     {
+        "lewis6991/gitsigns.nvim",
+        opts = {
+            diff_opts = {
+                internal = true,
+                algorithm = "histogram", -- "minimal" is faster
+            },
+        }
+      },
+    {
+        "Exafunction/windsurf.vim",
+        event="VeryLazy",
+        enabled=false
+    },
+    {
         "christoomey/vim-tmux-navigator",
         lazy = false
     },
