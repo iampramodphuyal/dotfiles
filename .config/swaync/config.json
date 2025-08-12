@@ -14,7 +14,7 @@
     "timeout-low": 3,
     "timeout-critical": 0,
     "fit-to-screen": false,
-    "control-center-width": 400,
+    "control-center-width": 300,
     "control-center-height": 900,
     "notification-window-width": 375,
     "keyboard-shortcuts": true,
@@ -26,7 +26,7 @@
     "widgets": ["title", "dnd", "menubar#desktop", "volume", "mpris", "notifications"],
     "widget-config": {
         "title": {
-            "text": " Quick settings",
+            "text": "Menu as a Service (MaaS)",
             "clear-all-button": true,
             "button-text": ""
         },
@@ -37,12 +37,11 @@
                 "actions": [
                     {
                         "label": "Whole screen",
-                        "_command": "sh -c 'swaync-client -cp, sleep 1, grimblast copysave output \"/tmp/screenshot.png\", swappy -f \"/tmp/screenshot.png\"'",
-                        "command": "grim -g '$(slurp -d)' - | wl-copy"
+                        "command": "swaync-client -t -sw && ~/dotfiles/customs/scripts/screenshot.sh"
                     },
                     {
                         "label": "Whole window / Select region",
-                        "command": "sh -c 'swaync-client -cp, grimblast copysave area \"/tmp/screenshot.png\", swappy -f \"/tmp/screenshot.png\"'"
+                        "command": "swaync-client -t -sw && ~/dotfiles/customs/scripts/screenshot.sh -r"
                     }
                 ]
             },
