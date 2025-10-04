@@ -21,4 +21,4 @@ map({ "n", "t" }, "<A-i>", function()
         },
     }
 end, { desc = "Floating term" })
--- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
