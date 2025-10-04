@@ -11,8 +11,50 @@ on_interrupt() {
 
 pkgArch(){
   echo "Detected Arch Linux..."
-  yay -Syu
-  sudo pacman -S hyprland xdg-desktop-portal-hyprland blueman network-manager-applet hyprcursor cliphist wl-clipboard pavucontrol swaync cpio meson cmake wayland-protocols rofi hyprlock hyprpaper hyprland-qtutils hyprsysteminfo hyprutils hyprland-qt-support wlr-randr
+  
+  local packages=(
+    hyprland
+    xdg-desktop-portal-hyprland
+    blueman
+    network-manager-applet
+    hyprcursor
+    cliphist
+    wl-clipboard
+    pavucontrol
+    swaync
+    cpio
+    meson
+    cmake
+    wayland-protocols
+    rofi
+    hyprlock
+    hyprpaper
+    hyprland-qtutils
+    hyprsysteminfo
+    hyprutils
+    hyprland-qt-support
+    wlr-randr
+    git
+    lazygit
+    neovim
+    kitty
+    base-devel
+    yay
+  )
+  
+  echo "The following packages will be installed:"
+  printf ' - %s\n' "${packages[@]}"
+  
+  read -rp "Proceed? [y/N] " choice
+  
+  if [[ $choice =~ ^[Yy]$ ]]; then
+    sudo pacman -Syu
+    sleep 2
+    sudo pacman -Syu --needed "${packages[@]}"
+  else
+    echo "Aborted."
+    exit 1
+  fi
 }
 
 
@@ -42,6 +84,7 @@ if [ -f /etc/os-release ]; then
     esac
 else
     echo "Cannot detect OS. /etc/os-release not found."
+    exit 1
 fi
 
 
