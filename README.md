@@ -1,64 +1,39 @@
-# My dotfiles
+# My Dotfiles
 
-This directory contains my dotfiles for primarily arch, Since i'm using arch, my preferred package installer here is yay and shell is zsh obiviously!
+These are my personal dotfiles for Arch Linux, using `yay` as the package manager and `zsh` as the shell.
 
-## Requirements
-Ensure following tools to be installed in system
+## Hyprland Users
 
-### Git
-```
-yay git
-```
-### Stow
-```
-yay stow
+If you are using Hyprland, it is recommended to run the `hyprInstaller.sh` script to install all the preferred packages and configurations:
+
+```bash
+./hyprInstaller.sh
 ```
 
-### Starship.rs
-```
-yay starship
-```
+## Dependencies
 
-### Terminal Emulator - Kitty
-```
-yay kitty
-```
+Install all the required dependencies with a single command:
 
-### Editor - Nvim powered by nvchad
+```bash
+yay -S git stow starship kitty nvim rofi waybar hyprlock hyprpaper swaync
 ```
-yay nvim
-```
-### Rofi - for dmenu
-```
-yay rofi
-```
-### Status Bar - Waybar
-```
-yay waybar
-```
-### Lockscreen - Hyprlock
-```
-yay hyprlock
-```
-### Wallpaper Engine - Hyprpaper
-```
-yay Hyprpaper
-```
-### Notification Daemon - Swaync
-```
-yay swaync
-```
-
 
 ## Installation
-First, clone dotfiles in home dir :> ~/ 
-```
-$ git clone git@github.com:iampramodphuyal/dotfiles.git
-$ cd dotfiles
-```
-then GNU Stow to create symlinks
 
-```
-$ stow .
-```
+1.  Clone the repository to your home directory:
 
+    ```bash
+    git clone git@github.com:iampramodphuyal/dotfiles.git ~/dotfiles
+    ```
+
+2.  Navigate to the `dotfiles` directory:
+
+    ```bash
+    cd ~/dotfiles
+    ```
+
+3.  Use GNU Stow to create the necessary symlinks:
+
+    ```bash
+    stow .
+    ```
