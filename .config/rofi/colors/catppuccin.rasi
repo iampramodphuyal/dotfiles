@@ -6,11 +6,21 @@
  * Colors
  **/
 
+// * {
+//     background:     #1E1D2FFF;
+//     background-alt: #282839FF;
+//     foreground:     #D9E0EEFF;
+//     selected:       #7AA2F7FF;
+//     active:         #ABE9B3FF;
+//     urgent:         #F28FADFF;
+// }
+
+// colors with transparency
 * {
-    background:     #1E1D2FFF;
-    background-alt: #282839FF;
-    foreground:     #D9E0EEFF;
-    selected:       #7AA2F7FF;
-    active:         #ABE9B3FF;
-    urgent:         #F28FADFF;
+    background:     #1E1D2CE6;   /* semi-transparent dark */
+    background-alt: #282839E6;   /* semi-transparent alternate */
+    foreground:     #D9E0EEE6;   /* semi-transparent text */
+    selected:       #7AA2F7E6;   /* semi-transparent selected item */
+    active:         #ABE9B3E6;   /* semi-transparent active item */
+    urgent:         #F28FADE6;   /* semi-transparent urgent item */
 }

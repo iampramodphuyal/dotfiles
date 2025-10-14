@@ -1,0 +1,23 @@
+
+@theme "cheatsheet/style.rasi"
+window {
+    width: 50%;
+    height: 60%;
+    font: "JetBrainsMono Nerd Font Medium 10";
+	  steal-focus: true;
+	  icon-theme: "Papirus";
+	  cycle: true;
+	  case-sensitive: false;
+    x-offset: 25%;
+    // background: rgba(30, 30, 30, 0.8); 
+    // border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 8px;
+}
+
+element {
+    border-radius: 5px;
+}
+
+mainbox {
+    background: transparent;
+}

@@ -1,0 +1,15 @@
+[Unit]
+Description=Archonal Custom Boot
+DefaultDependencies=no
+Before=graphical.target
+After=local-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/custom-boot.sh
+StandardOutput=tty
+StandardError=tty
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
