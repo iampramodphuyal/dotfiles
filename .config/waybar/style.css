@@ -115,9 +115,10 @@ tooltip label {
 #mpris,
 #custom-music,
 #battery {
-    padding: 0.1rem 0.4rem;
+    padding: 0.2rem 0.5rem;
     color: @peach;
-    background-color: @mantle;
+    /* background-color: @mantle; */
+    background-color: @crust;
 }
 
 #clock {
@@ -136,6 +137,20 @@ tooltip label {
 
 #backlight {
     color: @yellow;
+}
+
+#memory {
+    color: @teal;
+}
+
+#memory.warning {
+    color: @yellow;
+}
+
+#memory.critical {
+    color: @red;
+    animation-name: pulse;
+    animation-duration: 1s;
 }
 
 #mpris,

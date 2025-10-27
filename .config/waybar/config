@@ -3,30 +3,30 @@
     "position": "top", 
     "reload_style_on_change":true,
     "width": "auto", 
-    //"modules-left": [ "sway/workspaces", "sway/window"],
+    "_modules-left": [ "sway/workspaces", "sway/window"],
     "modules-left": [ "hyprland/workspaces", "hyprland/window"],
-    "modules-center": ["custom/power","cpu", "custom/music","clock", "battery", "custom/lock"],
-    "modules-right": ["tray","group/networks"], //add "network" if required
+    "modules-center": [ "cpu",  "custom/music", "clock", "memory"],
+    "modules-right": ["tray", "privacy", "battery","group/networks"], 
     "sway/workspaces": {
          "disable-scroll": true,
          "sort-by-name": true,
-         "format": " {icon} ",
+         "format": " {icon} "
      },
+
      "sway/window": {
           "separate-outputs": true,
-          //"format":"{initialTitle}",
           "format":"{title}",
           "max-length":50
     },
     "hyprland/workspaces": {
              "disable-scroll": true,
              "sort-by-name": true,
-             "format": " {icon} ",
+             "format": " {icon} "
     },
+
     "hyprland/window": {
           "separate-outputs": true,
           "format":"{initialTitle}",
-          //"format":"{title}",
           "max-length":50
     },
 
@@ -35,21 +35,68 @@
         "spacing": 5
     },
 
+    "privacy": {
+        "icon-spacing": 5,
+        "icon-size": 18,
+        "transition-duration": 250,
+        "modules": [
+            {
+                "type": "screenshare",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            },
+            {
+                "type": "audio-out",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            },
+            {
+                "type": "audio-in",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            }
+        ],
+        "ignore-monitor": true,
+        "ignore": [
+            {
+                "type": "audio-in",
+                "name": "cava"
+            },
+            {
+                "type": "screenshare",
+                "name": "obs"
+            }
+        ]
+    },
+
     "cpu": {
         "interval": 0.5,
         "format": "{usage}%",
         "max-length": 16,
-        "format": "\uf4bc {usage}% {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}",
+        "format": "{usage}% {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7} \uf4bc",
         "format-icons": [
-            "<span color='#69ff94'>▁</span>", // green
-            "<span color='#2aa9ff'>▂</span>", // blue
-            "<span color='#f8f8f2'>▃</span>", // white
-            "<span color='#f8f8f2'>▄</span>", // white
-            "<span color='#ffffa5'>▅</span>", // yellow
-            "<span color='#ffffa5'>▆</span>", // yellow
-            "<span color='#ff9977'>▇</span>", // orange
-            "<span color='#dd532e'>█</span>"  // red
+            "<span color='#69ff94'>▁</span>",             
+            "<span color='#2aa9ff'>▂</span>", 
+            "<span color='#f8f8f2'>▃</span>", 
+            "<span color='#f8f8f2'>▄</span>", 
+            "<span color='#ffffa5'>▅</span>",
+            "<span color='#ffffa5'>▆</span>", 
+            "<span color='#ff9977'>▇</span>", 
+            "<span color='#dd532e'>█</span>"  
        ]
+    },
+
+    "memory" : {
+        "interval": 1,
+        "_format": "{}% ",
+        "format": "{used:0.1f}G/{total:0.1f}G ",
+        "max-length": 13,
+        "tooltip-format": "Used: {used:0.1f}G\nAvailable: {avail:0.1f}G\nUsed (Swap): {swapUsed:0.1f}\nAvailable (Swap): {swapAvail:0.1f}G",
+        "states":{
+            "warning": 70,
+            "critical":90
+        },
+        "on-click": "btop"
     },
 
     "mpris": {
@@ -57,16 +104,16 @@
       "format": "<b>{player_icon} {dynamic}</b>",
       "format-paused": "<b>{status_icon} <i>{dynamic}</i></b>",
       "player-icons": {
-        "default": " 󰎇 ",
-        "mpv": " 🎵 ",
-        "spotify": "  ",
-        "youtube": "  ",
-        "firefox": " 󰈹 ",
-        "chrome": "  "
+            "default": " 󰎇 ",
+            "mpv": " 🎵 ",
+            "spotify": "  ",
+            "youtube": "  ",
+            "firefox": " 󰈹 ",
+            "chrome": "  "
       },
       "status-icons": {
         "paused": "⏸"
-      },
+      }
     },
 
 
@@ -74,16 +121,44 @@
         "format": " 󰎇 {}",
         "escape": true,
         "interval": 1,
-        "tooltip": false,
+        "tooltip": true,
         "exec": "playerctl metadata --format='{{ title }}'",
         "on-click": "playerctl play-pause",
-        "max-length": 40
+        "max-length": 30
+    },
+
+    "_clock": {
+        "timezone": "Asia/Kathmandu",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "<b>{:%a, %d %b | %H:%M}</b>"
     },
 
     "clock": {
         "timezone": "Asia/Kathmandu",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "<b>{:%a, %d %b | %H:%M}</b>",
+        "format": "<b>{:%H:%M}  </b>",
+        "format-alt": "<b>{:%A, %d %b, %Y}</b>",
+        "_tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "tooltip-format": "<b>{calendar}</b>",
+        "calendar": {
+                    "mode"          : "month",
+                    "mode-mon-col"  : 4,
+                    "weeks-pos"     : "right",
+                    "on-scroll"     : 1,
+                    "format": {
+                              "months":     "<span color='#ffead3'><b>{}</b></span>",
+                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                              }
+                    },
+        "actions":  {
+                    "on-click-right": "mode",
+                    "on-scroll-up": "tz_up",
+                    "on-scroll-down": "tz_down",
+                    "on-scroll-up": "shift_up",
+                    "on-scroll-down": "shift_down"
+                    }
     },
 
     "backlight": {
@@ -95,6 +170,7 @@
         "on-scroll-up":"brightnessctl set 10%+",
         "on-scroll-down":"brightnessctl set 5%-"
     },
+
     "battery": {
         "format": "{icon} {capacity}%",
         "format-icons": ["", "", "", "", ""],
@@ -110,6 +186,7 @@
         "tooltip-format": "Time Remaining: {time}\nCycles: {cycles}\nBattery Health: {health}\nStatus: {capacity} %",
         "on-click": "2"
     },
+
     "pulseaudio": {
         "format": "{icon} {volume}%",
         "format-muted": "",
@@ -125,25 +202,27 @@
         },
         "on-click": "pavucontrol"
     },
+
     "network": {
         "tooltip": true,
         "format":"\uf6ff",
-        "format-wifi": " ",
+        //"format-wifi": " ",
+        "format-wifi":  "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
         "rotate": 0,
         "format-ethernet": "󰈀 ",
         "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
         "format-linked": "󰈀 {ifname} (No IP)",
         "format-disconnected": "󰖪 ",
         "tooltip-format-disconnected": "Disconnected",
-        "format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
+        //"format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
+        "format-alt": " ",
         "interval": 2,
         "on-click-right": "nm-connection-editor --show"
     },
+    
     "bluetooth": {
         "format": "󰂯", 
         "format-connected": "",
-        //"format-connected-battery": " {device_alias} {device_battery_percentage}%",
-        //"format-device-preference": [ "device1", "device2" ],
         "tooltip-format": "My Device : {controller_alias}({controller_address})\nTotal Active Connections: {num_connections}",
         "tooltip-format-connected": "My Device : {controller_alias}({controller_address})\nTotal Active Connections: {num_connections}\n\n{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
@@ -160,11 +239,11 @@
 
     "group/power":{
         "orientation": "inherit",
-            "_drawer": {
-                "transition-duration": 500,
-                "children-class": "not-power",
-                "transition-left-to-right": true,
-            },
+        "_drawer": {
+            "transition-duration": 500,
+            "children-class": "not-power",
+            "transition-left-to-right": true
+        },
         "modules": [
             "custom/power",
             "custom/lock"
@@ -172,22 +251,20 @@
     },
 
     "group/networks":{
-            "orientation": "inherit",
-                "_drawer": {
-                    "transition-duration": 500,
-                    "children-class": "not-power",
-                    //"transition-left-to-right": true,
-                    //"transition-right-to-left": true,
-                },
-            "modules": [
-                "bluetooth", "network", "backlight" ,"pulseaudio", "custom/notification"
-            ]
+        "orientation": "inherit",
+        "_drawer": {
+            "transition-duration": 500,
+            "children-class": "not-power"
         },
+        "modules": [
+            "bluetooth", "network", "backlight" ,"pulseaudio", "custom/notification"
+        ]
+    },
 
     "custom/power": {
         "tooltip": true,
         "on-click": "wlogout",
-        "format": " 󰐥 ",
+        "format": " 󰐥 "
     },
 
     "custom/notification": {
