@@ -5,7 +5,7 @@
     "width": "auto", 
     "_modules-left": [ "sway/workspaces", "sway/window"],
     "modules-left": [ "hyprland/workspaces", "hyprland/window"],
-    "modules-center": [ "cpu",  "custom/music", "clock", "memory"],
+    "modules-center": [ "cpu",  "custom/music", "clock", "memory", "custom/gamemode"],
     "modules-right": ["tray", "privacy", "battery","group/networks"], 
     "sway/workspaces": {
          "disable-scroll": true,
@@ -18,6 +18,7 @@
           "format":"{title}",
           "max-length":50
     },
+    
     "hyprland/workspaces": {
              "disable-scroll": true,
              "sort-by-name": true,
@@ -33,6 +34,15 @@
     "tray": {
         "icon-size": "auto",
         "spacing": 5
+    },
+
+    "custom/gamemode": {
+        "exec":"~/.config/waybar/scripts/gamemode-status.sh",
+        "return-type": "json",
+        "interval": 5,  // Increase to 5 seconds instead of 2
+        "on-click": "~/.config/hypr/scripts/gamemode.sh && pkill -RTMIN+8 waybar",
+        "signal": 8,  // Update immediately on toggle instead of waiting for interval
+        "format": "{}"
     },
 
     "privacy": {

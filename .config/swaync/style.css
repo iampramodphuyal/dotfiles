@@ -144,7 +144,7 @@ label {
 
 .control-center-list {
     background: alpha(@crust, 0.8);
-    min-height: 5px;
+    min-height: 2px;
     border-top: none;
 }
 
@@ -259,14 +259,13 @@ label {
     border-top: none;
 }
 .widget-label > label {
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 400;
 }
 
 /* Menubar */
 .widget-menubar {
     background: transparent;
-    /* border: 1px solid @surface1; */
     border-top: none;
     border-bottom: none;
 }
@@ -546,7 +545,8 @@ slider highlight {
 }
 
 slider slider {
-    background-color: #fff;
+    /* background-color: #fff; */
+    background-color: transparent;
     border-radius: 50%;
     min-width: 14px;
     min-height: 14px;
@@ -565,4 +565,9 @@ slider slider:hover {
 
 .right.overlay-indicator {
     all: unset;
+}
+
+scrollbar,
+.scrollbar {
+    display: none !important;
 }

@@ -2,7 +2,7 @@
 
 #This Script is used to make alias for opening cursor via appImage file
 
-APPIMAGE="$HOME/Documents/Cursor-0.48.6-x86_64.AppImage"
+APPIMAGE="$HOME/Documents/Cursor-1.2.1-x86_64.AppImage"
 DIR="${1:-$(pwd)}"
 
 if [[ ! -f "$APPIMAGE" ]]; then

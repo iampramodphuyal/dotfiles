@@ -244,3 +244,17 @@ tooltip label {
     color: @green;
     animation: charging-pulse 1s ease-in-out infinite;
 }
+
+#custom-gamemode {
+    padding: 0 10px;
+    font-size: 16px;
+}
+
+#custom-gamemode.on {
+    color: @green; /* Green - matches your notification */
+}
+
+#custom-gamemode.off {
+    padding: 0 12px;
+    color: @overlay0;
+}
