@@ -18,11 +18,11 @@ return {
                 algorithm = "histogram", -- "minimal" is faster
             },
         }
-      },
+    },
     {
         "Exafunction/windsurf.vim",
-        event="VeryLazy",
-        enabled=false
+        event = "VeryLazy",
+        enabled = false
     },
     {
         "christoomey/vim-tmux-navigator",
@@ -94,7 +94,8 @@ return {
                 "lua-language-server",
                 "stylua",
                 "tsserver",
-                "prettier"
+                "prettier",
+                "pyright"
             },
         },
         event = 'VeryLazy'

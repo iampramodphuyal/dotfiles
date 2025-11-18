@@ -163,3 +163,4 @@ source ~/dotfiles/alias/fzf-git.sh
 # starship_precmd_user_func="set_win_title"
 # precmd_functions+=(set_win_title)
 eval "$(starship init zsh)"
+eval $(thefuck --alias)

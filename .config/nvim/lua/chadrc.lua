@@ -14,6 +14,8 @@ M.base46 = {
     transparency = false,
 }
 
+M.plugins = "plugins.init"
+
 M.ui = {
     cmp = {
         icons_left = false, -- only for non-atom styles!
