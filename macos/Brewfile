@@ -1,0 +1,97 @@
+# Homebrew Bundle file for macOS
+# Usage: brew bundle --file=~/dotfiles/macos/Brewfile
+
+# ===================================
+# Taps
+# ===================================
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+
+# ===================================
+# Shell & Terminal
+# ===================================
+brew "zsh"
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
+brew "oh-my-zsh"
+brew "tmux"
+brew "starship"
+
+# ===================================
+# Terminal Emulators
+# ===================================
+cask "kitty"
+cask "ghostty"
+
+# ===================================
+# CLI Tools
+# ===================================
+brew "fzf"
+brew "zoxide"
+brew "bat"           # Better cat
+brew "eza"           # Better ls
+brew "ripgrep"       # Better grep
+brew "fd"            # Better find
+brew "thefuck"       # Command correction
+
+# ===================================
+# Editors
+# ===================================
+brew "neovim"
+cask "visual-studio-code"
+
+# ===================================
+# Development Tools
+# ===================================
+brew "git"
+brew "lazygit"
+brew "stow"          # Dotfile management
+
+# Languages
+brew "node"
+brew "python"
+brew "go"
+brew "rust"
+
+# Package managers
+brew "npm"
+brew "pipenv"
+brew "yarn"
+
+# ===================================
+# Utilities
+# ===================================
+brew "wget"
+brew "curl"
+brew "jq"            # JSON processor
+brew "yq"            # YAML processor
+brew "tree"
+brew "htop"
+brew "btop"
+
+# ===================================
+# Docker & Containers
+# ===================================
+cask "docker"
+
+# ===================================
+# Fonts
+# ===================================
+cask "font-jetbrains-mono-nerd-font"
+cask "font-fira-code-nerd-font"
+cask "font-meslo-lg-nerd-font"
+cask "font-hack-nerd-font"
+
+# ===================================
+# Optional: GUI Apps
+# ===================================
+# cask "firefox"
+# cask "google-chrome"
+# cask "sublime-merge"
+# cask "raycast"        # Spotlight replacement
+
+# ===================================
+# macOS-specific utilities
+# ===================================
+brew "mas"            # Mac App Store CLI

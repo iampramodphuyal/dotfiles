@@ -1,0 +1,25 @@
+# Ignore patterns for stow
+# Documentation
+^/README\.md
+^/README\..*
+^/LICENSE.*
+
+# Git files
+\.git
+\.gitignore
+\.gitmodules
+
+# Scripts and installation files
+^/scripts
+^/Makefile
+^/install\.sh
+
+# macOS files
+\.DS_Store
+^/macos/Brewfile
+
+# Backup and temp files
+.*~
+\#.*\#
+\.swp
+\.swo
