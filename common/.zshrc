@@ -7,13 +7,27 @@
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-# export PATH=$HOME/.config/rofi/scripts:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-export PATH=$HOME/.config/rofi/scripts:$PATH
+
+# Platform-specific PATH configuration
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    # macOS-specific paths
+    # Homebrew paths (ARM Mac uses /opt/homebrew, Intel uses /usr/local)
+    if [[ $(uname -m) == "arm64" ]]; then
+        export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+    else
+        export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+    fi
+elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    # Linux-specific paths
+    export PATH=$HOME/.config/rofi/scripts:$PATH
+fi
+
+# Common paths
 export PATH=$PATH:/usr/local/go/bin
-export PATH="$HOME/.local/bin:$PATH" #for setting up from bash
-export PATH=~/.npm-global/bin:$PATH #npm
+export PATH="$HOME/.local/bin:$PATH"
+export PATH=~/.npm-global/bin:$PATH
 
 export GOPATH=$HOME/go
 export PATH="$PATH:$(go env GOPATH)/bin"
@@ -86,18 +100,17 @@ eval "$(zoxide init --cmd cd zsh)"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+
+# Common plugins
 plugins=(
 git
 zsh-autosuggestions
 zsh-syntax-highlighting
-# thefuck
 kitty
-dnf
 aws
 starship
 sudo
 sublime-merge
-systemd
 zoxide
 vi-mode
 pip
@@ -106,6 +119,13 @@ node
 man
 urltools
 )
+
+# Platform-specific plugins
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    plugins+=(dnf systemd)
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    plugins+=(macos brew)
+fi
 
 source $ZSH/oh-my-zsh.sh
 source ~/.grepsr/alias
@@ -164,3 +184,23 @@ source ~/dotfiles/alias/fzf-git.sh
 # precmd_functions+=(set_win_title)
 eval "$(starship init zsh)"
 eval $(thefuck --alias)
+
+# Platform-specific aliases and configurations
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    # macOS-specific aliases
+    alias ls='ls -G'  # Color output on macOS
+    alias update='brew update && brew upgrade && brew cleanup'
+
+elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    # Linux-specific aliases
+    alias ls='ls --color=auto'
+
+    # Wayland clipboard aliases (for systems without pbcopy/pbpaste)
+    if command -v wl-copy &> /dev/null; then
+        alias pbcopy='wl-copy'
+        alias pbpaste='wl-paste'
+    elif command -v xclip &> /dev/null; then
+        alias pbcopy='xclip -selection clipboard'
+        alias pbpaste='xclip -selection clipboard -o'
+    fi
+fi
