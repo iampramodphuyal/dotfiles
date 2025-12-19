@@ -1,14 +1,29 @@
+export PATH="$HOME/.local/bin:$PATH"
+
+# Added by Antigravity
+export PATH="/Users/pramodphuyal/.antigravity/antigravity/bin:$PATH"
+
+source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+
+source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+
+# eval "$(zoxide init zsh)"
+# # Set up fzf key bindings and fuzzy completion
+# source <(fzf --zsh)
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 # if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/147-instant-prompt-${(%):-%n}.zsh"
 # fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+# export ZSH=$HOME/.oh-my-zsh
 
 # Platform-specific PATH configuration
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -30,7 +45,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH=~/.npm-global/bin:$PATH
 
 export GOPATH=$HOME/go
-export PATH="$PATH:$(go env GOPATH)/bin"
+# export PATH="$PATH:$(go env GOPATH)/bin"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -118,6 +133,7 @@ pipenv
 node
 man
 urltools
+macos
 )
 
 # Platform-specific plugins
@@ -127,14 +143,14 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     plugins+=(macos brew)
 fi
 
-source $ZSH/oh-my-zsh.sh
-source ~/.grepsr/alias
-source ~/dotfiles/alias/alias
+# source $ZSH/oh-my-zsh.sh
+# source ~/.grepsr/alias
+# source ~/dotfiles/alias/alias
 source <(fzf --zsh)
 
 HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=100000
+SAVEHIST=100000
 setopt appendhistory
 
 
@@ -177,13 +193,11 @@ if [ -f ~/.custom_keybindings ]; then
     source ~/.custom_keybindings
 fi
 
-source ~/dotfiles/alias/fzf-git.sh
-
 
 # starship_precmd_user_func="set_win_title"
 # precmd_functions+=(set_win_title)
 eval "$(starship init zsh)"
-eval $(thefuck --alias)
+# eval $(thefuck --alias)
 
 # Platform-specific aliases and configurations
 if [[ "$OSTYPE" == "darwin"* ]]; then

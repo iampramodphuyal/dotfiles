@@ -1,16 +1,5 @@
 return {
     {
-        dir = "~/Documents/grepsr/wingman-vim",
-        name = 'Winger',
-        event = "VeryLazy",
-        config = function()
-            require("Winger").setup({
-                basePath = '~/Documents/grepsr/'
-            })
-        end,
-        -- enabled=false
-    },
-    {
         "lewis6991/gitsigns.nvim",
         opts = {
             diff_opts = {

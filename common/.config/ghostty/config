@@ -1,15 +1,16 @@
 font-family=""
 font-family ='JetBrainsMono Nerd Font'
-font-size = 10
-theme = catppuccin-mocha
-gtk-titlebar=false
-#gtk-titlebar-style=transparent
+font-size = 12
+# theme = catppuccin-mocha
+theme = TokyoNight 
+# gtk-titlebar=false
+# gtk-titlebar-style=transparent
 # gtk-tabs-location=bottom
 cursor-style=block
 cursor-style-blink=true
 background-opacity=0.95
 background-blur-radius=25
-gtk-wide-tabs=false
+# gtk-wide-tabs=false
 window-colorspace="display-p3"
 window-new-tab-position=end
 
@@ -22,14 +23,14 @@ alpha-blending=native
 #keybindings
 
 
-gtk-gsk-renderer=default
-gtk-titlebar-hide-when-maximized=true
+# gtk-gsk-renderer=default
+# gtk-titlebar-hide-when-maximized=true
 
 
 #Shell Integration
 shell-integration=detect
 
 adw-toolbar-style=raised-border
-gtk-adwaita=true
+# gtk-adwaita=true
 bold-is-bright=true
 auto-update=check
