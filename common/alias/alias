@@ -8,5 +8,4 @@ alias dot='cd ~/dotfiles/ && nvim'
 alias icat='kitten icat'
 alias myip='curl -s ifconfig.co/json | jq | bat'
 alias update='~/dotfiles/updater.sh'
-alias cursor="~/dotfiles/customs/scripts/cursorInitiator.sh"
-alias code="code --ozone-platform=wayland --enable-features=WaylandWindowDecorations"
+alias ff="~/Documents/pf/pf.sh"

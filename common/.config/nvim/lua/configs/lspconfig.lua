@@ -3,35 +3,33 @@ local on_attach = require("nvchad.configs.lspconfig").on_attach
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
-local lspconfig = require "lspconfig"
 local servers = { "pyright" }
 -- lsps with default config
-for _, lsp in ipairs(servers) do
-    lspconfig[lsp].setup {
-        on_attach = on_attach,
-        on_init = on_init,
-        capabilities = capabilities,
-    }
-end
-
--- For php intelephense, php
-lspconfig.intelephense.setup {
-    filetypes = { "php" },
+vim.lsp.config('*', {
     on_attach = on_attach,
     on_init = on_init,
     capabilities = capabilities,
-}
+})
+
+vim.lsp.enable(servers)
+-- For php intelephense, php
+-- vim.lsp.config.intelephense {
+--     filetypes = { "php" },
+--     on_attach = on_attach,
+--     on_init = on_init,
+--     capabilities = capabilities,
+-- }
 
 -- setup for c++
-lspconfig.clangd.setup {
-    filetypes = { "cpp", 'h' },
-    on_attach = on_attach,
-    on_init = on_init,
-    capabilities = capabilities,
-}
+-- vim.lsp.config.clangd {
+--     filetypes = { "cpp", 'h' },
+--     on_attach = on_attach,
+--     on_init = on_init,
+--     capabilities = capabilities,
+-- }
 
 --setup for golang
-lspconfig.gopls.setup {
+vim.lsp.config.gopls {
     filetypes = { 'go', 'gomod' },
     on_attach = on_attach,
     on_init = on_init,
@@ -39,7 +37,7 @@ lspconfig.gopls.setup {
 }
 
 -- typescript
-lspconfig.ts_ls.setup {
+vim.lsp.config.ts_ls {
     on_attach = on_attach,
     on_init = on_init,
     capabilities = capabilities,
@@ -48,7 +46,7 @@ lspconfig.ts_ls.setup {
 }
 
 -- python
-lspconfig.pyright.setup({
+vim.lsp.config.pyright({
     on_attach = on_attach,
     capabilities = capabilities,
     filetypes = { "python" }

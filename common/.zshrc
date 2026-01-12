@@ -29,6 +29,7 @@ source $HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 if [[ "$OSTYPE" == "darwin"* ]]; then
     # macOS-specific paths
     # Homebrew paths (ARM Mac uses /opt/homebrew, Intel uses /usr/local)
+    eval "$(brew shellenv)"
     if [[ $(uname -m) == "arm64" ]]; then
         export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
     else
@@ -145,7 +146,7 @@ fi
 
 # source $ZSH/oh-my-zsh.sh
 # source ~/.grepsr/alias
-# source ~/dotfiles/alias/alias
+source ~/common/alias/alias
 source <(fzf --zsh)
 
 HISTFILE=~/.zsh_history
@@ -218,3 +219,11 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
         alias pbpaste='xclip -selection clipboard -o'
     fi
 fi
+
+# jv - JSON Viewer CLI
+jv() {
+    /Users/pramodphuyal/Documents/projects/jsonviewer/.venv/bin/python -m jv "$@"
+}
+
+# opencode
+export PATH=/Users/pramodphuyal/.opencode/bin:$PATH
