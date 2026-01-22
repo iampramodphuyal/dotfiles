@@ -1,5 +1,12 @@
 vim.g.editorconfig = false
 
+
+vim.o.autoread = true
+vim.api.nvim_create_autocmd({ "FocusGained" }, {  -- Removed "BufEnter" for faster navigation
+    command = "checktime"
+})
+
+
 -- Function to create a new file in the current buffer's directory
 local function create_file_in_current_buffer_path(filename)
     local current_dir = vim.fn.expand "%:p:h"
