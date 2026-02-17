@@ -137,4 +137,12 @@ return {
         },
         event = 'VeryLazy'
     },
+    {
+        "nvim-tree/nvim-tree.lua",
+        opts = {
+            git = {
+                ignore = false,
+            },
+        },
+    },
 }

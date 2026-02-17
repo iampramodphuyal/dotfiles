@@ -3,6 +3,8 @@ export PATH="$HOME/.local/bin:$PATH"
 # Added by Antigravity
 export PATH="/Users/pramodphuyal/.antigravity/antigravity/bin:$PATH"
 
+zle -N menu-search
+zle -N recent-paths
 source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
@@ -23,7 +25,7 @@ source $HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
-# export ZSH=$HOME/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Platform-specific PATH configuration
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -144,7 +146,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     plugins+=(macos brew)
 fi
 
-# source $ZSH/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh
 # source ~/.grepsr/alias
 source ~/common/alias/alias
 source <(fzf --zsh)

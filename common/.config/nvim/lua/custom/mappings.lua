@@ -14,3 +14,19 @@ map("n", "<C-l>", ":TmuxNavigateRight<CR>", { desc = "Window Right" })
 map("n", "[c", function()
     require("treesitter-context").go_to_context(vim.v.count1)
 end, { silent = true })
+
+-- Send visual selection to Claude in tmux popup
+map("v", "<leader>cc", function()
+    -- Yank selection to register c
+    vim.cmd('normal! "cy')
+    local text = vim.fn.getreg("c")
+
+    -- Set tmux buffer and open Claude popup
+    vim.fn.system({ "tmux", "set-buffer", text })
+    local cwd = vim.fn.getcwd()
+    vim.fn.system(
+        'tmux display-popup -E -w 95% -h 95% -x C -y C "tmux save-buffer - | ~/dotfiles/scripts/utils/tmux-claude-send.sh \''
+            .. cwd
+            .. '\'"'
+    )
+end, { desc = "Send selection to Claude" })
