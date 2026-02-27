@@ -1,0 +1,40 @@
+# Shell & Terminal
+zsh
+tmux
+starship
+kitty
+ghostty
+
+# CLI Tools
+fzf
+zoxide
+bat
+eza
+ripgrep
+fd
+thefuck
+jq
+yq
+
+# Editors
+neovim
+
+# Dev Tools
+git
+lazygit
+stow
+nodejs
+npm
+python
+go
+rust
+
+# Utilities
+wget
+curl
+tree
+htop
+btop
+docker
+
+# Install with: yay -S --needed - < linux/pkglist.txt

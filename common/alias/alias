@@ -7,6 +7,5 @@ alias strlen='node -e "console.log(process.argv[1].length)"'
 alias dot='cd ~/dotfiles/ && nvim'
 alias icat='kitten icat'
 alias myip='curl -s ifconfig.co/json | jq | bat'
-alias update='~/dotfiles/updater.sh'
-alias ff="~/Documents/pf/pf.sh"
+[[ -f ~/Documents/pf/pf.sh ]] && alias ff="~/Documents/pf/pf.sh"
 alias ccd="claude --dangerously-skip-permissions"

@@ -1,15 +1,15 @@
 export PATH="$HOME/.local/bin:$PATH"
 
-# Added by Antigravity
-export PATH="/Users/pramodphuyal/.antigravity/antigravity/bin:$PATH"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    # Antigravity (macOS-only tool)
+    [[ -d "$HOME/.antigravity/antigravity/bin" ]] && export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 
-zle -N menu-search
-zle -N recent-paths
-source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-
-source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+    zle -N menu-search
+    zle -N recent-paths
+    source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+    source $HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+fi
 
 # eval "$(zoxide init zsh)"
 # # Set up fzf key bindings and fuzzy completion
@@ -136,12 +136,19 @@ pipenv
 node
 man
 urltools
-macos
 )
 
 # Platform-specific plugins
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    plugins+=(dnf systemd)
+    plugins+=(systemd)
+    if [[ -f /etc/os-release ]]; then
+        source /etc/os-release
+        case "$ID" in
+            arch|manjaro|endeavouros) plugins+=(archlinux) ;;
+            fedora) plugins+=(dnf) ;;
+            ubuntu|debian) plugins+=(ubuntu) ;;
+        esac
+    fi
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     plugins+=(macos brew)
 fi
@@ -211,6 +218,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # Linux-specific aliases
     alias ls='ls --color=auto'
+    alias update='yay -Syu'
 
     # Wayland clipboard aliases (for systems without pbcopy/pbpaste)
     if command -v wl-copy &> /dev/null; then
@@ -222,10 +230,10 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
     fi
 fi
 
-# jv - JSON Viewer CLI
-jv() {
-    /Users/pramodphuyal/Documents/projects/jsonviewer/.venv/bin/python -m jv "$@"
-}
+# jv - JSON Viewer CLI (only if installed)
+if [[ -f "$HOME/Documents/projects/jsonviewer/.venv/bin/python" ]]; then
+    jv() { "$HOME/Documents/projects/jsonviewer/.venv/bin/python" -m jv "$@"; }
+fi
 
 # opencode
-export PATH=/Users/pramodphuyal/.opencode/bin:$PATH
+[[ -d "$HOME/.opencode/bin" ]] && export PATH="$HOME/.opencode/bin:$PATH"

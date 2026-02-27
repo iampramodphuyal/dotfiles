@@ -196,6 +196,18 @@ install_packages() {
         fi
 
     elif [[ "$PLATFORM" == "linux" ]]; then
+        # Arch-based: install base packages from pkglist.txt
+        if [[ "$DISTRO" == "arch" ]] || [[ "$DISTRO" == "manjaro" ]]; then
+            if [ -f "linux/pkglist.txt" ]; then
+                read -p "Install base packages from pkglist.txt? (y/n) " -n 1 -r
+                echo
+                if [[ $REPLY =~ ^[Yy]$ ]]; then
+                    yay -S --needed - < linux/pkglist.txt
+                    print_success "Base packages installed from pkglist.txt"
+                fi
+            fi
+        fi
+
         # Check for existing installer scripts
         if [[ "$DISTRO" == "arch" ]] && [ -f "scripts/linux/hypr-installer.sh" ]; then
             read -p "Run Hyprland installer for Arch? (y/n) " -n 1 -r

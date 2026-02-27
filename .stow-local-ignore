@@ -14,6 +14,9 @@
 ^/Makefile
 ^/install\.sh
 
+# Root-level .config (not a stow package)
+^/\.config
+
 # macOS files
 \.DS_Store
 ^/macos/Brewfile

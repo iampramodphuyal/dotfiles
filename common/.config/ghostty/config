@@ -18,6 +18,7 @@ window-decoration=server
 # window-decoration=none
 window-theme=ghostty
 
+# macOS-only (ignored on Linux)
 macos-option-as-alt = true
 alpha-blending=native
 #keybindings
