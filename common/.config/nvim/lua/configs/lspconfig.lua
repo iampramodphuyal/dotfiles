@@ -29,15 +29,15 @@ vim.lsp.enable(servers)
 -- }
 
 --setup for golang
-vim.lsp.config.gopls {
+vim.lsp.config.gopls = {
     filetypes = { 'go', 'gomod' },
     on_attach = on_attach,
     on_init = on_init,
-    capabilities = capabilities
+    capabilities = capabilities,
 }
 
 -- typescript
-vim.lsp.config.ts_ls {
+vim.lsp.config.ts_ls = {
     on_attach = on_attach,
     on_init = on_init,
     capabilities = capabilities,
@@ -46,8 +46,8 @@ vim.lsp.config.ts_ls {
 }
 
 -- python
-vim.lsp.config.pyright({
+vim.lsp.config.pyright = {
     on_attach = on_attach,
     capabilities = capabilities,
     filetypes = { "python" }
-})
+}

@@ -20,17 +20,6 @@ return {
         },
     },
     {
-        "coder/claudecode.nvim",
-        dependencies = { "folke/snacks.nvim" },
-        config = true,
-        keys = {
-            { "<leader>ac", "<cmd>ClaudeCode<cr>",           desc = "Toggle Claude" },
-            { "<leader>as", "<cmd>ClaudeCodeSend<cr>",       mode = "v",            desc = "Send to Claude" },
-            { "<leader>aa", "<cmd>ClaudeCodeDiffAccept<cr>", desc = "Accept diff" },
-            { "<leader>ad", "<cmd>ClaudeCodeDiffDeny<cr>",   desc = "Deny diff" },
-        },
-    },
-    {
         "lewis6991/gitsigns.nvim",
         opts = {
             diff_opts = {
@@ -38,11 +27,6 @@ return {
                 algorithm = "histogram", -- "minimal" is faster
             },
         }
-    },
-    {
-        "Exafunction/windsurf.vim",
-        event = "VeryLazy",
-        enabled = false
     },
     {
         "christoomey/vim-tmux-navigator",

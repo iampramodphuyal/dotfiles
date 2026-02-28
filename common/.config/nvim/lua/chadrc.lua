@@ -10,6 +10,7 @@ M.base46 = {
     hl_override = {
         Comment = { italic = true },
         ["@comment"] = { italic = true },
+        Visual = { bg = "#3d4470" },
     },
     transparency = true,
 }
