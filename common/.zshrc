@@ -1,4 +1,6 @@
 export PATH="$HOME/.local/bin:$PATH"
+export CLAUDE_CODE_NO_FLICKER=1
+DISABLE_AUTO_TITLE="true"
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     # Antigravity (macOS-only tool)
@@ -132,7 +134,6 @@ sublime-merge
 zoxide
 vi-mode
 pip
-pipenv
 node
 man
 urltools
@@ -242,3 +243,25 @@ fi
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 export PATH=$PATH:$HOME/.local/opt/go/bin
 export PATH=$PATH:$HOME/go/bin
+
+# autoload -U bashcompinit
+# bashcompinit
+#
+eval "$(register-python-argcomplete pipenv)"
+
+
+# bun completions
+[ -s "/Users/pramodphuyal/.bun/_bun" ] && source "/Users/pramodphuyal/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+alias claude-mem='/Users/pramodphuyal/.bun/bin/bun "/Users/pramodphuyal/.claude/plugins/marketplaces/thedotmack/plugin/scripts/worker-service.cjs"'
+
+
+# Added by Antigravity CLI installer
+export PATH="/Users/pramodphuyal/.local/bin:$PATH"
+
+# Added by Antigravity IDE
+export PATH="/Users/pramodphuyal/.antigravity-ide/antigravity-ide/bin:$PATH"
