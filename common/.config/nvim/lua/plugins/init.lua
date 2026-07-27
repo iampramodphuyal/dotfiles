@@ -8,15 +8,15 @@ return {
             bigfile = { enabled = true },
             dashboard = { enabled = false },
             explorer = { enabled = false },
-            indent = { enabled = true },
+            indent = { enabled = true, animate = { enabled = false } }, -- guides yes, animation is the lag
             input = { enabled = true },
             picker = { enabled = true },
             notifier = { enabled = true },
             quickfile = { enabled = true },
-            scope = { enabled = true },
-            scroll = { enabled = true },
+            scope = { enabled = false }, -- per-CursorMoved recompute; redundant with indent scope
+            scroll = { enabled = false }, -- 200ms animated scroll = the main "laggy" feel
             statuscolumn = { enabled = true },
-            words = { enabled = true },
+            words = { enabled = false }, -- per-cursor-move LSP doc-highlight requests
         },
     },
     {
@@ -92,20 +92,8 @@ return {
     },
 
     {
-        "williamboman/mason.nvim",
-        opts = {
-            ensure_installed = {
-                "lua-language-server",
-                "stylua",
-                "tsserver",
-                "prettier",
-                "pyright"
-            },
-        },
-        event = 'VeryLazy'
-    },
-    {
         "nvim-treesitter/nvim-treesitter",
+        branch = "main", -- NvChad v2.5 uses the main-branch API; master is frozen
         opts = {
             ensure_installed = {
                 "vim",
@@ -119,7 +107,20 @@ return {
                 "python"
             },
         },
-        event = 'VeryLazy'
+    },
+    {
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
+        dependencies = { "williamboman/mason.nvim" },
+        event = "VeryLazy",
+        opts = {
+            ensure_installed = {
+                "lua-language-server",
+                "stylua",
+                "typescript-language-server",
+                "prettier",
+                "pyright",
+            },
+        },
     },
     {
         "nvim-tree/nvim-tree.lua",

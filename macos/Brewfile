@@ -39,6 +39,7 @@ brew "thefuck"       # Command correction
 # Editors
 # ===================================
 brew "neovim"
+brew "tree-sitter-cli" # required by nvim-treesitter (main branch) to build parsers
 cask "visual-studio-code"
 
 # ===================================

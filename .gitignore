@@ -1,0 +1,3 @@
+
+# MyCodeTime live state — must not be version-controlled (corrupts on merge/sync)
+common/.config/nvim/mycodetime_stats.json

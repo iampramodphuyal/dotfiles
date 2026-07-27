@@ -14,16 +14,17 @@ M.options = {
 M.nvdash = {
     load_on_startup = true,
 }
+
+vim.opt.clipboard = M.options.clipboard -- global option; set once, not per-filetype
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "py", "php", "js", "lua", "ts", "json", 'go' },
+    pattern = { "python", "php", "javascript", "lua", "typescript", "json", "go" },
     callback = function()
-        vim.opt.tabstop = M.options.tabstop
-        vim.opt.shiftwidth = M.options.shiftwidth
-        vim.opt.expandtab = M.options.expandtab
-        vim.opt.foldmethod = M.options.foldmethod
-        vim.opt.autoindent = M.options.autoindent
-        vim.opt.smartindent = M.options.smartindent
-        vim.opt.clipboard = M.options.clipboard
+        vim.opt_local.tabstop = M.options.tabstop
+        vim.opt_local.shiftwidth = M.options.shiftwidth
+        vim.opt_local.expandtab = M.options.expandtab
+        vim.opt_local.foldmethod = M.options.foldmethod
+        vim.opt_local.autoindent = M.options.autoindent
+        vim.opt_local.smartindent = M.options.smartindent
     end,
 })
 
